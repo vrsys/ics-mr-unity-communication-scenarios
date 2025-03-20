@@ -4,8 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using UnityEngine;
+using Unity.Netcode;
 
-public class APMR_ExperimentRunner : MonoBehaviour
+public class APMR_ExperimentRunner : NetworkBehaviour
 {
 
     [Header("Experiment Run Data")]
@@ -322,7 +323,6 @@ public class APMR_ExperimentRunner : MonoBehaviour
 
 
 
-    /*
 
     [ServerRpc(RequireOwnership = false)]
     private void StartExperimentServerRpc(ServerRpcParams serverRpcParams = default)
@@ -337,6 +337,9 @@ public class APMR_ExperimentRunner : MonoBehaviour
     {
         StartCoroutine(ExperimentCoroutine());
     }
+
+    /*
+
 
     [ServerRpc(RequireOwnership = false)]
     private void NotifyServerToAdvanceExperimentServerRpc(ServerRpcParams serverRpcParams = default)
