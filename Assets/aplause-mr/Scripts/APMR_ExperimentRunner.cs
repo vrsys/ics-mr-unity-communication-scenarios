@@ -232,12 +232,10 @@ public class APMR_ExperimentRunner : NetworkBehaviour
 
             if ((Time.time - startTime) > maxTrialDurationSecs)
             {
-                // TODO reinstate
-                // end trial
-                //if (NetworkManager.Singleton.IsHost)
-               // {
-                 //   NotifyServerToAdvanceExperimentServerRpc();
-                //}
+                if (NetworkManager.Singleton.IsHost)
+                {
+                   NotifyServerToAdvanceExperimentServerRpc();
+                }
             }
             yield return null;
         }
@@ -289,12 +287,10 @@ public class APMR_ExperimentRunner : NetworkBehaviour
 
             if ((Time.time - startTime) > maxTrialDurationSecs)
             {
-                // TODO reinstate
-                // end trial
-                //if (NetworkManager.Singleton.IsHost)
-                //{
-                //    NotifyServerToAdvanceExperimentServerRpc();
-                //}
+                if (NetworkManager.Singleton.IsHost)
+                {
+                    NotifyServerToAdvanceExperimentServerRpc();
+                }
             }
             yield return null;
         }
@@ -338,7 +334,6 @@ public class APMR_ExperimentRunner : NetworkBehaviour
         StartCoroutine(ExperimentCoroutine());
     }
 
-    /*
 
 
     [ServerRpc(RequireOwnership = false)]
@@ -353,7 +348,6 @@ public class APMR_ExperimentRunner : NetworkBehaviour
         Debug.Log("Advancing experiment...");
         shouldAdvanceExperiment = true;
     }
-    */
 
     public void CheckForAdvanceKeypress()
     {
