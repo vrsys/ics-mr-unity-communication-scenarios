@@ -78,8 +78,8 @@ public class APMR_SceneController : MonoBehaviour
 
     public void MuteAudioSources()
     {
-        var audioSources = Object.FindObjectsOfType<AudioSource>();
-
+        var audioSources = Object.FindObjectsByType<AudioSource>(FindObjectsSortMode.None);
+        
         foreach (var audioSource in audioSources)
         {
             Debug.Log("muting audio source " + audioSource.gameObject.name);
