@@ -13,12 +13,12 @@ public class APMR_SceneController : MonoBehaviour
     private AudioSource audioSource = null;
 
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
         audioSource = GetComponent<AudioSource>();
     }
 
-    public void PrepareSceneCondition(APMR_ExperimentRunner.Condition condition)
+    public virtual void PrepareScene(int trialIndex, APMR_ExperimentRunner.Condition condition)
     {
         Debug.Log("Prepare scene for trial with condition " + condition);
 
@@ -26,7 +26,7 @@ public class APMR_SceneController : MonoBehaviour
 
     }
 
-    public void ClearScene()
+    public virtual void ClearScene()
     {
 
         SetAvatarsVisible(false);

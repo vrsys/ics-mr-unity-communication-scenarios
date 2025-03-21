@@ -12,6 +12,11 @@ public class APMR_ExperimentRunner : NetworkBehaviour
     [Header("Experiment Run Data")]
 
     [SerializeField]
+    [Tooltip("Choose whether this should be run in networked mode")]
+    private bool runInNetworkedMode = false;
+
+
+    [SerializeField]
     [Tooltip("The index of the interlocutor (participant) within their group")]
     private int interlocutorId = -1;
 
@@ -110,6 +115,7 @@ public class APMR_ExperimentRunner : NetworkBehaviour
 
         numberOfTrials = System.Enum.GetValues(typeof(Condition)).Length;
 
+        sceneController.ClearScene();
         sceneController.DisplayInstructions("Experiment initialized.\nPress Enter to start.");
 
     }
@@ -211,7 +217,7 @@ public class APMR_ExperimentRunner : NetworkBehaviour
         yield return ShowSeriesOfInstructionsUntilAdvance(experimentInstructions.GetPreTrainingText());
 
         // set condition for training round
-        sceneController.PrepareSceneCondition(Condition.FIRST_CONDITION);
+        sceneController.PrepareScene(0, Condition.FIRST_CONDITION);
 
         bool playedWarningSound = false;
         float startTime = Time.time;
@@ -250,7 +256,7 @@ public class APMR_ExperimentRunner : NetworkBehaviour
     {
         yield return ShowSeriesOfInstructionsUntilAdvance(experimentInstructions.GetPreTrialText(trialNum));
 
-        sceneController.PrepareSceneCondition(conditionOrder[trialNum]);
+        sceneController.PrepareScene(trialNum, conditionOrder[trialNum]);
 
         trialStartTime = Time.time;
     }
@@ -353,11 +359,13 @@ public class APMR_ExperimentRunner : NetworkBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            // TODO reinstate for networking
-            //NotifyServerToAdvanceExperimentServerRpc();
-
-            // TODO remove for networking
-            shouldAdvanceExperiment = true;
+            if (runInNetworkedMode)
+            {
+                NotifyServerToAdvanceExperimentServerRpc();
+            }
+            else {
+                shouldAdvanceExperiment = true;
+            }
         }
     }
 
@@ -367,12 +375,14 @@ public class APMR_ExperimentRunner : NetworkBehaviour
     {
         if (!experimentStarted && Input.GetKeyDown(KeyCode.Return))
         {
-            // TODO reinstate when networking is there
-            //StartExperimentServerRpc();
-
-            // TODO remove when networking is there
-            StartCoroutine(ExperimentCoroutine());
-
+            if (runInNetworkedMode)
+            {
+                StartExperimentServerRpc();
+            }
+            else
+            {
+                StartCoroutine(ExperimentCoroutine());
+            }
             experimentStarted = true;
         }
 
