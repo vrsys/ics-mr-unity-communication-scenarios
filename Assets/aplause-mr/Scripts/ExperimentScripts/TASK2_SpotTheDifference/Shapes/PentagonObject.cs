@@ -46,8 +46,11 @@
              filter.sharedMesh = mesh;
              collider.sharedMesh = mesh;
              renderer.sharedMaterial = AssetDatabase.GetBuiltinExtraResource<Material>("Default-Material.mat");
-     
-             return obj;
+
+        string path = "Assets/GeneratedMeshes/PentagonMesh.asset";
+        SaveAsset.SaveMeshAsset(mesh, path);
+
+        return obj;
          }
      
          [MenuItem("GameObject/3D Object/Pentagon", false, 0)]

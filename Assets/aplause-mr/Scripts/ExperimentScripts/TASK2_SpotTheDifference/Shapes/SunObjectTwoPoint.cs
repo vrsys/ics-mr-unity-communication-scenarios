@@ -65,8 +65,11 @@
              filter.sharedMesh = mesh;
              collider.sharedMesh = mesh;
              renderer.sharedMaterial = AssetDatabase.GetBuiltinExtraResource<Material>("Default-Material.mat");
-     
-             return obj;
+
+        string path = "Assets/GeneratedMeshes/SubTwoPointMesh.asset";
+        SaveAsset.SaveMeshAsset(mesh, path);
+
+        return obj;
          }
      
          [MenuItem("GameObject/3D Object/TwoPointSun", false, 0)]

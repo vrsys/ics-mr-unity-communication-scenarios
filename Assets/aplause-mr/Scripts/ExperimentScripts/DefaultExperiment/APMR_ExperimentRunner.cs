@@ -54,11 +54,13 @@ public class APMR_ExperimentRunner : NetworkBehaviour
     public enum Condition
     {
         FIRST_CONDITION,
-        SECOND_CONDITION
+        SECOND_CONDITION,
+        THIRD_CONDITION,
+        FOURTH_CONDITION
     }
 
     // for counterbalancing, set condition order depending on group index
-    public List<Condition> conditionOrder = new List<Condition> { Condition.FIRST_CONDITION, Condition.SECOND_CONDITION };
+    public List<Condition> conditionOrder = new List<Condition> { Condition.FIRST_CONDITION, Condition.SECOND_CONDITION, Condition.THIRD_CONDITION, Condition.FOURTH_CONDITION };
 
     public struct TrialData
     {

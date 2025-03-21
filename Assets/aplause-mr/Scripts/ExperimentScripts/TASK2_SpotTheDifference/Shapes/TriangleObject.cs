@@ -40,6 +40,9 @@
              filter.sharedMesh = mesh;
              collider.sharedMesh = mesh;
              renderer.sharedMaterial = AssetDatabase.GetBuiltinExtraResource<Material>("Default-Material.mat");
+
+        string path = "Assets/GeneratedMeshes/CustomTriangleMesh.asset";
+        SaveAsset.SaveMeshAsset(mesh, path);
      
              return obj;
          }

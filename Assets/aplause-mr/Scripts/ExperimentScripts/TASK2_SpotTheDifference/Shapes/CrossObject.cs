@@ -1,10 +1,11 @@
      #if UNITY_EDITOR
      using UnityEngine;
      using UnityEditor;
-     #endif
-     
-     public class CrossPrimitive {
-         #if UNITY_EDITOR
+using System.IO;
+
+#endif
+public class CrossPrimitive {
+#if UNITY_EDITOR
          private static Mesh CreateMesh() {
          Vector3[] vertices = new Vector3[24];
         vertices[0] = new Vector3(-0.1f, 0.1f, 0f);
@@ -67,14 +68,33 @@
      
              filter.sharedMesh = mesh;
              collider.sharedMesh = mesh;
-             //renderer.sharedMaterial = AssetDatabase.GetBuiltinExtraResource<Material>("Default-Material.mat");
-     
-             return obj;
+            //renderer.sharedMaterial = AssetDatabase.GetBuiltinExtraResource<Material>("Default-Material.mat");
+
+            string path = "Assets/GeneratedMeshes/CrossMesh.asset";
+            SaveAsset.SaveMeshAsset(mesh, path);
+
+            return obj;
          }
      
          [MenuItem("GameObject/3D Object/Cross", false, 0)]
          public static void Create() {
              CreateObject();
          }
-         #endif
-     }
+
+    //private static void SaveMeshAsset(Mesh mesh, string path)
+    //{
+    //    // Ensure the directory exists
+    //    string directory = Path.GetDirectoryName(path);
+    //    if (!Directory.Exists(directory))
+    //    {
+    //        Directory.CreateDirectory(directory);
+    //    }
+
+    //    // Save the mesh asset
+    //    AssetDatabase.CreateAsset(mesh, path);
+    //    AssetDatabase.SaveAssets();
+    //    AssetDatabase.Refresh();
+    //}
+
+#endif
+}

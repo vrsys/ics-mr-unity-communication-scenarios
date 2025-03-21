@@ -10,6 +10,6 @@ Blue,Diamond,Blue,Diamond
 Orange,Circle,Orange,Circle
 Green,Pentagon,Green,Pentagon
 Green,DoubleTri,Green,DoubleTri
-Blue,Oval,Green,Oval
-Red,CrossSimple,Red,CrossSimpleRotated
-Green,Tree,Green,OvalCross
+Green,OvalCross,Orange,OvalCross
+Blue,SunFourPoint,Blue,Oval
+Green,Tree,Green,DoubleTri

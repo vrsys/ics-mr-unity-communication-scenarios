@@ -37,8 +37,10 @@ public class DifferenceObjectController : MonoBehaviour
     public class ShapeInfo
     {
 
+        public string p0_col { get; set; }
         public string p0_shape { get; set; }
 
+        public string p1_col { get; set; }
         public string p1_shape { get; set; }
     }
 
@@ -71,6 +73,8 @@ public class DifferenceObjectController : MonoBehaviour
     
     private int activeTrial;
     private bool shadowingActive;
+
+    private List<GameObject> shapes = new List<GameObject>();
 
 
     [SerializeField]
@@ -201,22 +205,17 @@ public class DifferenceObjectController : MonoBehaviour
         //InitMarkerStateArrays();
     }
 
-    //public void InitializeBoxesAndShapesForTrial(int trial, bool shadowing)
-    //{
-    //    taskComplete = false;
-
-    //    activeTrial = trial;
-    //    shadowingActive = shadowing;
-
-    //    ShowBoxes();
-    //    AttachShapesToBoxes();
-    //    InitMarkerStateArrays();
-    //}
 
     public void HideBoxesAndShapes()
     {
         HideShapes();
         HideBoxes(shadowingActive);
+
+        foreach (var shape in shapes)
+        {
+            Destroy(shape);
+        }
+        shapes.Clear();
     }
 
     private void InitMarkerStateArrays()
@@ -318,17 +317,6 @@ public class DifferenceObjectController : MonoBehaviour
         objectSet0.SetActive(false);
         objectSet1.SetActive(false);
 
-        //if (shadowing)
-        //{
-        //    objectSetStacked0.transform.position += new Vector3(0, -10, 0);
-        //    objectSetStacked1.transform.position += new Vector3(0, -10, 0);
-        //}
-        //else
-        //{
-        //    objectSet0.transform.position += new Vector3(0, -10, 0);
-        //    objectSet1.transform.position += new Vector3(0, -10, 0);
-        //}
-
     }
     private void ShowBoxes()
     {
@@ -337,16 +325,11 @@ public class DifferenceObjectController : MonoBehaviour
         {
             objectSetStacked0.SetActive(true);
             objectSetStacked1.SetActive(true);
-
-            //objectSetStacked0.transform.position += new Vector3(0, 10, 0);
-            //objectSetStacked1.transform.position += new Vector3(0, 10, 0);
         }
         else
         {
             objectSet0.SetActive(true);
             objectSet1.SetActive(true);
-            //objectSet0.transform.position += new Vector3(0, 10, 0);
-            //objectSet1.transform.position += new Vector3(0, 10, 0);
         }
     }
 
@@ -358,18 +341,24 @@ public class DifferenceObjectController : MonoBehaviour
     }
 
 
-    private GameObject AttachShapeToBox(string shapeString, GameObject boxObject)
+    private GameObject AttachShapeToBox(string color, string shape, GameObject boxObject)
     {
-        // split string by first capital letter
-        string[] split = System.Text.RegularExpressions.Regex.Split(shapeString, @"(?<!^)(?=[A-Z])");
-        string color = split[0];
-        string shape = split[1];
-
         // instantiate prefab for shape
-        GameObject shapeObject = Instantiate(Resources.Load<GameObject>(resourceDirectory + "Prefabs/Shapes/" + shape));
+        string prefabPath = resourceDirectory + "/Prefabs/Shapes/" + shape;
+        GameObject prefabToInstantiate = Resources.Load<GameObject>(prefabPath);
+        if (prefabToInstantiate == null)
+        {
+            Debug.LogError("Could not load prefab: " + prefabPath);
+        }
+        GameObject shapeObject = Instantiate(prefabToInstantiate);
 
         // apply material
-        Material material = Resources.Load<Material>(resourceDirectory + "Materials/" + color);
+        string materialPath = resourceDirectory + "/Materials/" + color.ToLower() + "_mat";
+        Material material = Resources.Load<Material>(materialPath);
+        if (material == null)
+        {
+            Debug.LogError("Could not load material: " + materialPath);
+        }
 
         // find all renderers in children of shapeObject
         Renderer[] renderers = shapeObject.GetComponentsInChildren<Renderer>();
@@ -420,7 +409,7 @@ public class DifferenceObjectController : MonoBehaviour
 
         if (shapeInfo.Count != numObjectsPerPerson)
         {
-            Debug.LogError("Number of shapes in csv file does not match number of objects");
+            Debug.LogError("Number of shapes in csv file does not match number of objects: " + shapeInfo.Count + "/" + numObjectsPerPerson);
         }
 
 
@@ -438,13 +427,17 @@ public class DifferenceObjectController : MonoBehaviour
             activeDiffObjects1 = diffObjects1;
         }
 
-        List<GameObject> shapes = new List<GameObject>();
+        shapes = new List<GameObject>();
 
         for (int i = 0; i < numObjectsPerPerson; i++)
         {
             
-            GameObject shapeObject0 = AttachShapeToBox(shapeInfo[i].p0_shape, activeDiffObjects0[i]);
-            GameObject shapeObject1 = AttachShapeToBox(shapeInfo[i].p1_shape, activeDiffObjects1[i]);
+            GameObject shapeObject0 = AttachShapeToBox(shapeInfo[i].p0_col, shapeInfo[i].p0_shape, activeDiffObjects0[i]);
+            GameObject shapeObject1 = AttachShapeToBox(shapeInfo[i].p1_col, shapeInfo[i].p1_shape, activeDiffObjects1[i]);
+
+            shapeObject0.name = shapeInfo[i].p0_col + shapeInfo[i].p0_shape + "_0";
+            shapeObject1.name = shapeInfo[i].p1_col + shapeInfo[i].p1_shape + "_1";
+
             shapes.Add(shapeObject0);
             shapes.Add(shapeObject1);
 
