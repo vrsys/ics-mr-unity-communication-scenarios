@@ -87,7 +87,6 @@ public class DifferenceObjectController : MonoBehaviour
 
         HideBoxes(true);
         HideBoxes(false);
-        //HideShapes();
 
         HideTrainingScenario();
 
@@ -130,14 +129,7 @@ public class DifferenceObjectController : MonoBehaviour
         {
             objectSetStacked1 = GameObject.Find("ObjectSetStacked1");
         }
-        if (doubledShapes == null)
-        {
-            doubledShapes = GameObject.Find("DoubledShapes");
-        }
-        if (differentShapes == null)
-        {
-            differentShapes = GameObject.Find("DifferentShapes");
-        }
+
         if (trainingScenario == null)
         {
             trainingScenario = GameObject.Find("TrainingScenario");
@@ -208,7 +200,6 @@ public class DifferenceObjectController : MonoBehaviour
 
     public void HideBoxesAndShapes()
     {
-        HideShapes();
         HideBoxes(shadowingActive);
 
         foreach (var shape in shapes)
@@ -333,13 +324,6 @@ public class DifferenceObjectController : MonoBehaviour
         }
     }
 
-    private void HideShapes()
-    {
-        doubledShapes.transform.position += new Vector3(0, -10, 0);
-
-        differentShapes.transform.Find("Trial" + activeTrial).transform.position += new Vector3(0, -10, 0);
-    }
-
 
     private GameObject AttachShapeToBox(string color, string shape, GameObject boxObject)
     {
@@ -396,12 +380,6 @@ public class DifferenceObjectController : MonoBehaviour
             using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
             {
                 shapeInfo = new List<ShapeInfo>(csv.GetRecords<ShapeInfo>());
-
-                foreach (var item in shapeInfo)
-                {
-                    Debug.Log(item.p0_shape);
-                    Debug.Log(item.p1_shape);
-                }
             }
 
         }
