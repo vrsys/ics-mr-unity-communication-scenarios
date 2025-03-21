@@ -1,0 +1,5 @@
+
+BlueTree,OrangeTree
+RedCross,RedCrossRotated
+GreenOval,GreenSunFourPoint
+OrangeOvalCross,OrangeCrossSimple (2)

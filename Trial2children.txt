@@ -1,0 +1,5 @@
+
+GreenOvalCross,OrangeOvalCross
+RedSunTwoPoint,RedSunTwoPoint (1)
+BlueSunFourPoint,BlueOval
+GreenTree,GreenDoubleTri

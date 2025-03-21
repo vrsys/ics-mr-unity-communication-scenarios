@@ -217,7 +217,7 @@ public class APMR_ExperimentRunner : NetworkBehaviour
         yield return ShowSeriesOfInstructionsUntilAdvance(experimentInstructions.GetPreTrainingText());
 
         // set condition for training round
-        sceneController.PrepareScene(0, Condition.FIRST_CONDITION);
+        sceneController.PrepareScene(-1, Condition.FIRST_CONDITION);
 
         bool playedWarningSound = false;
         float startTime = Time.time;

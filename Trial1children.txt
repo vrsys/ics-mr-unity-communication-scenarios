@@ -1,0 +1,5 @@
+
+RedStar,OrangeStar
+BlueTriangle (2),BlueTriangle (4)
+GreenSunFourPoint,GreenOvalCross
+RedCrossPointy,RedCrossSimple (1)

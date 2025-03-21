@@ -20,7 +20,7 @@ public class TASK1_SceneController : APMR_SceneController
         base.PrepareScene(trialIndex, condition);
 
         // load floor plan
-        int floorPlanToLoad = trialIndex;
+        int floorPlanToLoad = trialIndex + 1;
         string floorPlanResourcePath = "TASK1/FloorPlanMaterials/plan" + floorPlanToLoad + "_s3";
         Material loadedFloorPlanMaterial = (Material)Resources.Load(floorPlanResourcePath, typeof(Material));
         if (loadedFloorPlanMaterial == null)

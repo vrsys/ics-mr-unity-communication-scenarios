@@ -1,0 +1,5 @@
+
+BlueOval,GreenOval
+RedCrossSimple,RedCrossSimpleRotated
+GreenTree,GreenOvalCross
+BlueStar5Point,BlueSunFourPoint
