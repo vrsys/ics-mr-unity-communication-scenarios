@@ -17,15 +17,10 @@ public class TASK2_SceneController : APMR_SceneController
     {
         base.PrepareScene(trialIndex, condition);
 
-        if (trialIndex < 0)
-        {
-            differenceObjectController.ShowTrainingScenario();
-        }
-        else
-        {
-            differenceObjectController.InitializeBoxesAndShapesForTrialNew(trialIndex, (trialIndex > 0));
+        // choose whether to show stacked set of boxes or spread set
+        bool showstackedBoxes = (trialIndex % 2 == 0);
 
-        }
+        differenceObjectController.InitializeBoxesAndShapesForTrial(trialIndex, showstackedBoxes);
     }
 
     public override void ClearScene()
