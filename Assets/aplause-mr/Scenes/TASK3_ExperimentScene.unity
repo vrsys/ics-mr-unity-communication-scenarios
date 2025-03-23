@@ -741,7 +741,6 @@ MonoBehaviour:
   threeLinesGroupSpan: 1
   survivalItemPrefab: {fileID: 8293210388495112964, guid: c909075828b07d04e8bf0748ab1c7147, type: 3}
   taskDataResourceDirectory: TASK3
-  numSurvivalItems: 15
   itemLayout: 2
   survivalScenarioOrder: 0300000004000000020000000000000001000000
 --- !u!1 &1828921558
@@ -1009,6 +1008,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instructionsDisplay: {fileID: 1088938595}
   survivalItemController: {fileID: 1827387164}
+  numItemsForTrainingScenario: 12
+  numItemsToShow: 12
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
