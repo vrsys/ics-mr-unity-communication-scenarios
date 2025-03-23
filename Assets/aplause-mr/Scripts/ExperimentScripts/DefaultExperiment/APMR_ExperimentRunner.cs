@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using UnityEngine;
 using Unity.Netcode;
+using UnityEngine.InputSystem;
 
 public class APMR_ExperimentRunner : NetworkBehaviour
 {
@@ -359,7 +360,8 @@ public class APMR_ExperimentRunner : NetworkBehaviour
 
     public void CheckForAdvanceKeypress()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Keyboard.current.spaceKey.wasPressedThisFrame)
+        //if (Input.GetKeyDown(KeyCode.Space))
         {
             if (runInNetworkedMode)
             {
@@ -375,7 +377,8 @@ public class APMR_ExperimentRunner : NetworkBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!experimentStarted && Input.GetKeyDown(KeyCode.Return))
+        if (!experimentStarted && Keyboard.current.enterKey.wasPressedThisFrame)
+        //if (!experimentStarted && Input.GetKeyDown(KeyCode.Return))
         {
             if (runInNetworkedMode)
             {

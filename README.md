@@ -27,4 +27,5 @@ To allow multiple participants to interact in the same scene, the scenes corresp
 
 This is made possible by the [VRSYS-Core](https://github.com/vrsys/vrsys-core/) library (note: the version of VRSYS-Core used in this project is currently found on the [feature/update-unity6](https://github.com/vrsys/vrsys-core/tree/feature/update-unity6) branch). 
 
-Networking (i.e. the possibility to join)
+Please note that in order to run the project using Unity Netcode, the Unity project must be linked to a project ID. The project ID can be selected under `Edit > Project Settings > Services`.
+
