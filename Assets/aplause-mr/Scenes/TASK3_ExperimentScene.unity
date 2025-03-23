@@ -173,7 +173,7 @@ MonoBehaviour:
   startExperimentWithTrainingPhase: 1
   maxTrialDurationMins: 8
   playTrialEndWarningSoundAfterMins: 7
-  conditionOrder: 0000000001000000
+  conditionOrder: 00000000010000000200000003000000
   sceneController: {fileID: 2004359094}
   experimentInstructions: {fileID: 33879168}
 --- !u!114 &33879168
@@ -719,7 +719,7 @@ Transform:
   m_GameObject: {fileID: 1827387162}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.058, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -738,12 +738,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distFromCentre: 0.7
-  threeLinesGroupSpan: 1.5
+  threeLinesGroupSpan: 1
   survivalItemPrefab: {fileID: 8293210388495112964, guid: c909075828b07d04e8bf0748ab1c7147, type: 3}
-  taskDataResourceDirectory: TASK3/SurvivalTask
+  taskDataResourceDirectory: TASK3
   numSurvivalItems: 15
-  itemLayout: 1
-  survivalScenarioOrder: 03000000020000000000000001000000
+  itemLayout: 2
+  survivalScenarioOrder: 0300000004000000020000000000000001000000
 --- !u!1 &1828921558
 GameObject:
   m_ObjectHideFlags: 0

@@ -16,9 +16,9 @@ public class SurvivalItemController : MonoBehaviour
     [SerializeField]
     private GameObject survivalItemPrefab;
     [SerializeField]
-    private string taskDataResourceDirectory = "SurvivalTask";
-    [SerializeField]
-    private int numSurvivalItems = 15;
+    private string taskDataResourceDirectory = "TASK3";
+
+    private int maxNumSurvivalItems = 15;
 
 
 
@@ -51,23 +51,23 @@ public class SurvivalItemController : MonoBehaviour
         DESERT,
         SEA,
         WINTER,
-        MOUNTAINS
+        MOUNTAINS,
+        MOON
     }
 
     [SerializeField]
-    private List<SurvivalScenario> survivalScenarioOrder = new List<SurvivalScenario> { SurvivalScenario.MOUNTAINS, SurvivalScenario.WINTER, SurvivalScenario.DESERT, SurvivalScenario.SEA };
+    private List<SurvivalScenario> survivalScenarioOrder = new List<SurvivalScenario> { SurvivalScenario.MOUNTAINS, SurvivalScenario.MOON, SurvivalScenario.WINTER, SurvivalScenario.DESERT, SurvivalScenario.SEA};
 
-
-/*
-public override void OnJoinedRoom()
-{
-    InstantiateSurvivalItemsIfMaster();
-}
-
-private void InstantiateSurvivalItemsIfMaster()
-{
-    if (PhotonNetwork.IsMasterClient)
+    private void Start()
     {
+        // TODO remove for networked version
+        InstantiateSurvivalItemsIfMaster();
+
+    }
+
+    private void InstantiateSurvivalItemsIfMaster()
+    {
+        /*
         string prefabPath = prefabResourceDirectory + "/" + survivalItemPrefab.name;
 
         for (int i = 0; i < numSurvivalItems; i++)
@@ -81,63 +81,66 @@ private void InstantiateSurvivalItemsIfMaster()
         }
 
         InitialiseReferences();
-    }
-}
-
-
-public void InitialiseSurvivalItemsIfClient()
-{
-    if (!PhotonNetwork.IsMasterClient)
-    {
-        for (int i = 0; i < numSurvivalItems; i++)
+        */
+        for (int i = 0; i < maxNumSurvivalItems; i++)
         {
-            GameObject itemGameObject = GameObject.Find(survivalItemPrefab.name + "(Clone)");
-            if (itemGameObject != null)
-            {
-                itemGameObject.name = survivalItemPrefab.name + itemGameObject.GetComponent<PhotonView>().ViewID;
-                itemGameObject.transform.SetParent(transform, false);
-                //itemGameObject.transform.localPosition = Vector3.zero;
-            }
+            GameObject newGameObject = Instantiate(survivalItemPrefab);
+            newGameObject.name = survivalItemPrefab.name + i.ToString("000");
+            newGameObject.transform.SetParent(transform, false);
+
         }
 
         InitialiseReferences();
     }
-}
+    /*
 
-private void InitialiseReferences()
-{
-    foreach (Transform child in transform)
+
+    public void InitialiseSurvivalItemsIfClient()
     {
-        itemGameObjects.Add(child.gameObject);
+        if (!PhotonNetwork.IsMasterClient)
+        {
+            for (int i = 0; i < numSurvivalItems; i++)
+            {
+                GameObject itemGameObject = GameObject.Find(survivalItemPrefab.name + "(Clone)");
+                if (itemGameObject != null)
+                {
+                    itemGameObject.name = survivalItemPrefab.name + itemGameObject.GetComponent<PhotonView>().ViewID;
+                    itemGameObject.transform.SetParent(transform, false);
+                    //itemGameObject.transform.localPosition = Vector3.zero;
+                }
+            }
 
+            InitialiseReferences();
+        }
     }
-    // order by viewID to make sure that all clients have the same order
-    itemGameObjects = itemGameObjects.OrderBy(itemGameObj => itemGameObj.GetComponent<PhotonView>().ViewID).ToList();
-}
-*/
+    */
 
-    public void ShowBoxesForSurvivalScenario(int scenarioIndex)
+    private void InitialiseReferences()
+    {
+        foreach (Transform child in transform)
+        {
+            itemGameObjects.Add(child.gameObject);
+
+        }
+        // order by viewID to make sure that all clients have the same order
+        //itemGameObjects = itemGameObjects.OrderBy(itemGameObj => itemGameObj.GetComponent<PhotonView>().ViewID).ToList();
+        itemGameObjects = itemGameObjects.OrderBy(itemGameObj => int.Parse(new string(itemGameObj.name.Where(char.IsDigit).ToArray())) ).ToList();
+    }
+
+    public void ShowBoxesForSurvivalScenario(int scenarioIndex, int maxItemsToShow)
     {
         SurvivalScenario survivalScenario = survivalScenarioOrder[scenarioIndex];
         string csvPath = taskDataResourceDirectory + "/SurvivalItemData/" + survivalScenario.ToString() + "_survival_items";
 
-        DisplayItemsFromCSV(csvPath);
+        LoadItemsFromCSV(csvPath);
+
+        items = items.Take(maxItemsToShow).ToList();
+
+        ApplyItemLabelsAndImages();
+
+        PositionItems();
     }
 
-    public void DisplayItemsFromCSV(string csvPath)
-    {
-        LoadItemsFromCSV(csvPath);
-        ApplyItemLabelsAndImages();
-        PositionItems();
-    }
-    public void DisplayItemsFromCSV(string csvPath, int randomSeed)
-    {
-        LoadItemsFromCSV(csvPath);
-        //RandomizeItemOrderWithSeed(randomSeed);
-        RandomizeItemOrderWithinGroupsWithSeed(randomSeed, 3);
-        ApplyItemLabelsAndImages();
-        PositionItems();
-    }
 
     private void LoadItemsFromCSV(string filepath)
     {
@@ -166,45 +169,24 @@ private void InitialiseReferences()
 
     }
 
-    private void RandomizeItemOrderWithSeed(int randomSeed)
-    {
-        Random.seed = randomSeed;
-        items = items.OrderBy(x => Random.value).ToList();
-    }
-
-    private void RandomizeItemOrderWithinGroupsWithSeed(int randomSeed, int numGroups)
-    {
-        Random.seed = randomSeed;
-        int itemsPerGroup = items.Count / numGroups;
-
-        List<ItemInfo> randomizedItemList = new List<ItemInfo>();
-
-        // iterate through groups to randomize items within each group
-        for (int i = 0; i < numGroups; ++i)
-        {
-            List<ItemInfo> groupItems = items.GetRange(i * itemsPerGroup, itemsPerGroup);
-            groupItems = groupItems.OrderBy(x => Random.value).ToList();
-            randomizedItemList.AddRange(groupItems);
-        }
-
-        items = randomizedItemList;
-    }
 
 
     private void ApplyItemLabelsAndImages()
     {
-        string materialDirectory = taskDataResourceDirectory + "/Materials";
-
+        string materialDirectory = taskDataResourceDirectory + "/Materials/SurvivalItemImageMaterials/";
 
         for (int i = 0; i < items.Count; i++)
         {
-            //Debug.Log(i + ", " + items[i].longName);
-
-            //itemGameObjects[i].transform.Find("Canvas").transform.Find("Text").GetComponent<TextMeshProUGUI>().text = items[i].longName;
             itemGameObjects[i].GetComponent<ItemCube>().textField.SetText(items[i].longName);
             itemGameObjects[i].name = "Item_" + items[i].shortName;
 
-            Material itemMaterial = (Material)Resources.Load("SurvivalTask/Materials/" + items[i].id, typeof(Material));
+            Material itemMaterial = (Material)Resources.Load(materialDirectory + items[i].id, typeof(Material));
+
+            if (itemMaterial == null)
+            {
+                Debug.LogError("Could not find material: " + materialDirectory + items[i].id);
+            }
+
             itemGameObjects[i].GetComponent<ItemCube>().imageRenderer.material = itemMaterial;
         }
     }
@@ -285,10 +267,20 @@ private void InitialiseReferences()
         }
 
         // make sure remaining cubes are hidden
-        for (int i = items.Count; i < itemGameObjects.Count; i++)
+        for (int i = 0; i < itemGameObjects.Count; i++)
         {
+            if (i < items.Count)
+            {
+                itemGameObjects[i].SetActive(true);
+            }
+            else
+            {
+                itemGameObjects[i].SetActive(false);
+            }
+
             // TODO set inactive
-            itemGameObjects[i].transform.localPosition = new Vector3(0,-1,0);
+            //itemGameObjects[i].transform.localPosition = new Vector3(0,-1,0);
+
         }
 
     }
@@ -308,7 +300,8 @@ private void InitialiseReferences()
             //photonView.RequestOwnership();
 
             obj.GetComponent<Rigidbody>().isKinematic = true;
-            obj.transform.position = new Vector3(0f, -1f, 0f);
+            obj.SetActive(false);
+            //obj.transform.position = new Vector3(0f, -1f, 0f);
         }
     }
 

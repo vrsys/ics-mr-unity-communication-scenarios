@@ -30,7 +30,7 @@ public class DifferenceObjectController : MonoBehaviour
     [SerializeField]
     private GameObject boxSetTrainingRoot1;
 
-    private bool taskComplete;
+    //private bool taskComplete = false;
 
     public class ShapeInfo
     {
@@ -73,7 +73,6 @@ public class DifferenceObjectController : MonoBehaviour
         boxSetTrainingRoot0.SetActive(false);
         boxSetTrainingRoot1.SetActive(false);
 
-        taskComplete = false;
     
         marker0 = new List<CubeMarker>();
         marker1 = new List<CubeMarker>();
@@ -128,7 +127,7 @@ public class DifferenceObjectController : MonoBehaviour
 
     public void InitializeBoxesAndShapesForTrial(int trial, bool _showStackedBoxes)
     {
-        taskComplete = false;
+        //taskComplete = false;
 
         activeTrial = trial;
 
@@ -195,11 +194,13 @@ public class DifferenceObjectController : MonoBehaviour
             markerStates1[id] = state;
             marker1[id].SetMarkerState(state);
         }
-
+        
+        /*
         if (IsTaskComplete())
         {
             taskComplete = true;
         }
+        */
     }
     
     
