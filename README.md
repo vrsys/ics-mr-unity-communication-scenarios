@@ -4,7 +4,9 @@ This repository contains Unity implementations corresponding to the following co
 
 1. Floor Plan Negotiation
 	* TODO
-	* Task used in study: TODO ref
+	* Task used in study: 
+
+Felix Immohr, Gareth Rendle, Annika Neidhardt, Steve Göring, Rakesh Rao Ramachandra Rao, Stephanie Arevalo Arboleda, Bernd Froehlich, and Alexander Raake. 2023. Proof-of-Concept Study to Evaluate the Impact of Spatial Audio on Social Presence and User Behavior in Multi-Modal VR Communication. In Proceedings of the 2023 ACM International Conference on Interactive Media Experiences (IMX '23). Association for Computing Machinery, New York, NY, USA, 209–215. [https://doi.org/10.1145/3573381.3596458](https://doi.org/10.1145/3573381.3596458)
 
 2. Spot-the-difference collaborative task
 	* TODO
