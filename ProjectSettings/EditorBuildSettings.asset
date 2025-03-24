@@ -12,11 +12,14 @@ EditorBuildSettings:
     path: Assets/VRSYS/Core/Demo/Demo Scenes/Single-Scene Setup/VRSYS-SingleScene.unity
     guid: b696740ea170a5840baa71d36430d7a2
   - enabled: 1
-    path: Assets/aplause-mr/Scenes/NetworkedExperimentScene.unity
+    path: Assets/aplause-mr/Scenes/OldNetworkedExperimentScene.unity
     guid: 5abcea97ec34cb7498f5b823d4fc2158
   - enabled: 1
     path: Assets/aplause-mr/Scenes/TASK1_NetworkedExperimentScene.unity
     guid: 09f51d6582286b84886fe3c7ecbc4813
+  - enabled: 1
+    path: Assets/aplause-mr/Scenes/NetworkedExperimentScene.unity
+    guid: 70a32045f6385164085a441bb7349cd9
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: ac34eac87dac1a547ae486c757c5ddf0, type: 2}
