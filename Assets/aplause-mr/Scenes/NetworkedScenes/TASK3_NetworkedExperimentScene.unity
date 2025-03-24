@@ -1610,7 +1610,7 @@ Transform:
   m_GameObject: {fileID: 633841085}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.30649802, y: 0.21071067, z: 0.15900034}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3964,7 +3964,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instructionsDisplay: {fileID: 158579962}
   survivalItemController: {fileID: 888595017}
-  numItemsForTrainingScenario: 12
+  numItemsForTrainingScenario: 3
   numItemsToShow: 12
 --- !u!82 &1873105436
 AudioSource:

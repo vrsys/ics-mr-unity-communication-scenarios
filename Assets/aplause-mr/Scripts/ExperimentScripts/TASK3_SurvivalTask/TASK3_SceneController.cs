@@ -30,8 +30,8 @@ public class TASK3_SceneController : APMR_SceneController
     public override void ClearScene()
     {
         base.ClearScene();
-        
-        //differenceObjectController.HideBoxesAndShapes();
+
+        survivalItemController.HideItems();
     }
 
 }

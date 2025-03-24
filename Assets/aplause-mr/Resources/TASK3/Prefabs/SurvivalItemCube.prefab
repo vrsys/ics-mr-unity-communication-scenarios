@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2530128971818018574}
   - component: {fileID: 1213373758556930540}
   - component: {fileID: 8601724248896320531}
-  m_Layer: 28
+  m_Layer: 0
   m_Name: Text Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -200,7 +200,7 @@ GameObject:
   - component: {fileID: 3947471513406847641}
   - component: {fileID: 5718082864401680566}
   - component: {fileID: 4590696969844246927}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Tape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -307,7 +307,7 @@ GameObject:
   - component: {fileID: 8596939731734638965}
   - component: {fileID: 1191415186258967392}
   - component: {fileID: 2921488929878990158}
-  m_Layer: 28
+  m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -532,7 +532,7 @@ GameObject:
   - component: {fileID: 1692093377049747245}
   - component: {fileID: 8003245628150047625}
   - component: {fileID: 7008518258646787175}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: SurvivalItemCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -687,7 +687,7 @@ GameObject:
   - component: {fileID: 8293210388731521060}
   - component: {fileID: 8293210388731521061}
   - component: {fileID: 8293210388731521058}
-  m_Layer: 28
+  m_Layer: 0
   m_Name: ImgCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}

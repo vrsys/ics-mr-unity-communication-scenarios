@@ -29,6 +29,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/aplause-mr/Scenes/NetworkedScenes/TASK4_NetworkedExperimentScene.unity
     guid: cf10480143820a4418953bed3e00e14c
+  - enabled: 1
+    path: Assets/aplause-mr/Scenes/NetworkedScenes/TASK1_NetworkedExperimentScene.unity
+    guid: 2035ca98789d15b4594a4a62a0fa84fe
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: ac34eac87dac1a547ae486c757c5ddf0, type: 2}
