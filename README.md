@@ -3,17 +3,17 @@
 This repository contains Unity implementations corresponding to the following conversation tasks:
 
 1. Floor Plan Negotiation
-	* TODO
+	* TODO description
 	* Task used in study: 
 
 Felix Immohr, Gareth Rendle, Annika Neidhardt, Steve Göring, Rakesh Rao Ramachandra Rao, Stephanie Arevalo Arboleda, Bernd Froehlich, and Alexander Raake. 2023. Proof-of-Concept Study to Evaluate the Impact of Spatial Audio on Social Presence and User Behavior in Multi-Modal VR Communication. In Proceedings of the 2023 ACM International Conference on Interactive Media Experiences (IMX '23). Association for Computing Machinery, New York, NY, USA, 209–215. [https://doi.org/10.1145/3573381.3596458](https://doi.org/10.1145/3573381.3596458)
 
 2. Spot-the-difference collaborative task
-	* TODO
+	* TODO description
 	* Task used in study: TODO ref
 
 3. Survival Task (with interactable objects)
-	* TODO
+	* TODO description
 	* Task used in study: TODO ref
 
 4. Survival Task (without interactable objects)
@@ -21,13 +21,28 @@ Felix Immohr, Gareth Rendle, Annika Neidhardt, Steve Göring, Rakesh Rao Ramacha
 	* Task used in study: TODO ref
 
 
-## Usage Notes
+# Usage Notes
 
-### Distributed Implementations
+## Scene Types
 
-To allow multiple participants to interact in the same scene, the scenes corresponding to each task handle distribution of scene state (i.e. the 6DOF pose of moving objects), and allow voice communication between users.
+The repository includes two sets of scenes (in `Assets/aplause-mr/Resources/Scenes`):
 
-This is made possible by the [VRSYS-Core](https://github.com/vrsys/vrsys-core/) library (note: the version of VRSYS-Core used in this project is currently found on the [feature/update-unity6](https://github.com/vrsys/vrsys-core/tree/feature/update-unity6) branch). 
+* **Basic** Scenes: these scenes show the different scene states or scenarios available for each task, and allow the user to advance through the experiment, but do not include any interactivity. They can serve as building blocks, if you wish to use the tasks in your own distribution system.
+
+* **Networked** Scenes: these scenes allow multiple participants to join the scene as avatars, communicate via voice, and interact with scene objects where relevant. For more information on networking, see below.
+
+
+## Networked Implementations
+
+To allow multiple participants to interact in the same scene, the networked scenes corresponding to each task handle distribution of scene state (i.e. the 6DOF pose of moving objects), and allow voice communication between users.
+
+This is made possible by the [VRSYS-Core](https://github.com/vrsys/vrsys-core/) framework (note: the version of VRSYS-Core used in this project is, at the time of writing, found on the [feature/update-unity6](https://github.com/vrsys/vrsys-core/tree/feature/update-unity6) branch). 
 
 Please note that in order to run the project using Unity Netcode, the Unity project must be linked to a project ID. The project ID can be selected under `Edit > Project Settings > Services`.
+
+### Networked Scene Settings
+
+**Auto Start**: the scenes are set to 'auto start' by default, meaning that when play is pressed, users will be automatically added to a default lobby. This is practical if only small numbers of users will join the scene at once. If you need more control over who joins which lobby, disable Auto Start in the Lobby Settings (accessed either at path `Assets/VRSYS/Core/ScriptableObjects/Instances/Lobby Settings` or in the scenes in `__NETWORKING__/VRSYS-Networking > Connection Manager component > Lobby Setting`). 
+
+**User Type/Role**: In Auto Start mode, a user type will automatically be selected, e.g. as Desktop user or HMD user. The default role can be set in the Network User Spawn Info settings (accessed either at path `Assets/VRSYS/Core/ScriptableObjects/Instances/Network User Spawn Info` or in the scenes in `__NETWORKING__/VRSYS-Networking > Connection Manager component > User Spawn Info`). If you prefer to select the user type dynamically when starting the scene, disable Auto Start mode (see above).
 
