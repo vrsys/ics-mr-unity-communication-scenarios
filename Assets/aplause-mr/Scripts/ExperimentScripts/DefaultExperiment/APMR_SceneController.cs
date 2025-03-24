@@ -18,6 +18,11 @@ public class APMR_SceneController : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
+    public virtual void StartExperiment()
+    {
+
+    }
+
     public virtual void PrepareScene(int trialIndex, APMR_ExperimentRunner.Condition condition)
     {
         Debug.Log("Prepare scene for trial with condition " + condition);

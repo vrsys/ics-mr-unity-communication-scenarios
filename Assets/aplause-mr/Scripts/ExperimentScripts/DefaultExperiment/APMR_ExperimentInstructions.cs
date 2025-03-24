@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class APMR_ExperimentInstructions : MonoBehaviour
 {
-    public virtual void InitializeExperiment(int experimentIndex)
+    public virtual void StartExperiment(int experimentIndex)
     {
 
     }

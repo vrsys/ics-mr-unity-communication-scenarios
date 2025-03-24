@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using Unity.Netcode;
 using UnityEngine;
 
 public class SurvivalItemController : MonoBehaviour
@@ -61,36 +62,33 @@ public class SurvivalItemController : MonoBehaviour
     private void Start()
     {
         // TODO remove for networked version
-        InstantiateSurvivalItemsIfMaster();
+        //InstantiateSurvivalItemsIfMaster();
 
+    }
+
+    public void CreateObjects()
+    {
+        if (NetworkManager.Singleton.IsServer)
+        {
+            InstantiateSurvivalItemsIfMaster();
+        }
     }
 
     private void InstantiateSurvivalItemsIfMaster()
     {
-        /*
-        string prefabPath = prefabResourceDirectory + "/" + survivalItemPrefab.name;
 
-        for (int i = 0; i < numSurvivalItems; i++)
-        {
-            GameObject newGameObject = PhotonNetwork.InstantiateSceneObject(prefabPath, Vector3.zero, Quaternion.identity);
-            newGameObject.name = survivalItemPrefab.name + newGameObject.GetComponent<PhotonView>().ViewID;
-            //newGameObject.name = survivalItemPrefab.name + i;
-            newGameObject.transform.SetParent(transform, false);
-
-            //furnitureGameObject.transform.localPosition = Vector3.zero;
-        }
-
-        InitialiseReferences();
-        */
         for (int i = 0; i < maxNumSurvivalItems; i++)
         {
             GameObject newGameObject = Instantiate(survivalItemPrefab);
+
+            var instanceNetworkObject = newGameObject.GetComponent<NetworkObject>();
+            instanceNetworkObject.Spawn();
+
             newGameObject.name = survivalItemPrefab.name + i.ToString("000");
             newGameObject.transform.SetParent(transform, false);
 
         }
 
-        InitialiseReferences();
     }
     /*
 
@@ -117,18 +115,23 @@ public class SurvivalItemController : MonoBehaviour
 
     private void InitialiseReferences()
     {
+        itemGameObjects = new List<GameObject>();
+
         foreach (Transform child in transform)
         {
             itemGameObjects.Add(child.gameObject);
-
         }
-        // order by viewID to make sure that all clients have the same order
-        //itemGameObjects = itemGameObjects.OrderBy(itemGameObj => itemGameObj.GetComponent<PhotonView>().ViewID).ToList();
-        itemGameObjects = itemGameObjects.OrderBy(itemGameObj => int.Parse(new string(itemGameObj.name.Where(char.IsDigit).ToArray())) ).ToList();
+        // order by network object id to make sure that all clients have the same order
+        itemGameObjects = itemGameObjects.OrderBy(itemGameObj => itemGameObj.GetComponent<NetworkObject>().NetworkObjectId ).ToList();
     }
 
     public void ShowBoxesForSurvivalScenario(int scenarioIndex, int maxItemsToShow)
     {
+        if (0 == itemGameObjects.Count)
+        {
+            InitialiseReferences();
+        }
+
         SurvivalScenario survivalScenario = survivalScenarioOrder[scenarioIndex];
         string csvPath = taskDataResourceDirectory + "/SurvivalItemData/" + survivalScenario.ToString() + "_survival_items";
 
@@ -287,6 +290,11 @@ public class SurvivalItemController : MonoBehaviour
 
     public void HideItems()
     {
+        if (0 == itemGameObjects.Count)
+        {
+            InitialiseReferences();
+        }
+
         /*
         if (!PhotonNetwork.IsMasterClient)
         {

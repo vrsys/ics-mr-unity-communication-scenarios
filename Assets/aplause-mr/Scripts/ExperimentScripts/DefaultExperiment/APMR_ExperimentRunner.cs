@@ -96,13 +96,13 @@ public class APMR_ExperimentRunner : NetworkBehaviour
 
     void Start()
     {
-        InitializeExperiment();
+        Initialize();
 
         maxTrialDurationSecs = 60 * maxTrialDurationMins;
         playTrialEndWarningAfterSecs = 60 * playTrialEndWarningSoundAfterMins;
     }
 
-    void InitializeExperiment() 
+    void Initialize() 
     {
 
         //InitializeStudyVariablesFromExperimentSettings();
@@ -119,7 +119,7 @@ public class APMR_ExperimentRunner : NetworkBehaviour
         numberOfTrials = System.Enum.GetValues(typeof(Condition)).Length;
 
         sceneController.ClearScene();
-        sceneController.DisplayInstructions("Experiment initialized.\nPress Enter to start.");
+        sceneController.DisplayInstructions("Experiment ready.\nPress Enter to start.");
 
     }
 
@@ -194,7 +194,9 @@ public class APMR_ExperimentRunner : NetworkBehaviour
     private IEnumerator ExperimentCoroutine()
     {
 
-        experimentInstructions.InitializeExperiment(groupId);
+        experimentInstructions.StartExperiment(groupId);
+
+        sceneController.StartExperiment();
 
         yield return ShowInstructionsUntilAdvance("Welcome to the experiment.");
 

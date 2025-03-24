@@ -13,6 +13,12 @@ public class TASK3_SceneController : APMR_SceneController
     [SerializeField]
     private int numItemsToShow = 12;
 
+    public override void StartExperiment()
+    {
+        survivalItemController.CreateObjects();
+    }
+
+
     public override void PrepareScene(int trialIndex, APMR_ExperimentRunner.Condition condition)
     {
         base.PrepareScene(trialIndex, condition);
