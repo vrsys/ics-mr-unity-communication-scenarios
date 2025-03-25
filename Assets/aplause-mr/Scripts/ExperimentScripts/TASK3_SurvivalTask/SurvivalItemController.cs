@@ -7,7 +7,7 @@ using System.Linq;
 using Unity.Netcode;
 using UnityEngine;
 
-public class SurvivalItemController : MonoBehaviour
+public class SurvivalItemController : NetworkBehaviour
 {
 
     [SerializeField]
@@ -83,6 +83,8 @@ public class SurvivalItemController : MonoBehaviour
 
             var instanceNetworkObject = newGameObject.GetComponent<NetworkObject>();
             instanceNetworkObject.Spawn();
+
+
 
             newGameObject.name = survivalItemPrefab.name + i.ToString("000");
             newGameObject.transform.SetParent(transform, false);
@@ -196,18 +198,20 @@ public class SurvivalItemController : MonoBehaviour
 
     private void PositionItems()
     {
-        /*
-        if (!PhotonNetwork.IsMasterClient)
+
+        if (!NetworkManager.Singleton.IsServer)
         {
             return;
         }
 
         foreach (GameObject obj in itemGameObjects)
         {
-            PhotonView photonView = obj.GetComponent<PhotonView>();
-            photonView.RequestOwnership();
+
+            if (!obj.GetComponent<NetworkBehaviour>().IsOwner)
+            {
+                obj.GetComponent<NetworkObject>().ChangeOwnership(NetworkManager.Singleton.LocalClientId);
+            }
         }
-        */
 
         if (ItemLayout.CIRCLE == itemLayout)
         {
@@ -270,20 +274,9 @@ public class SurvivalItemController : MonoBehaviour
         }
 
         // make sure remaining cubes are hidden
-        for (int i = 0; i < itemGameObjects.Count; i++)
+        for (int i = items.Count; i < itemGameObjects.Count; i++)
         {
-            if (i < items.Count)
-            {
-                itemGameObjects[i].SetActive(true);
-            }
-            else
-            {
-                itemGameObjects[i].SetActive(false);
-            }
-
-            // TODO set inactive
-            //itemGameObjects[i].transform.localPosition = new Vector3(0,-1,0);
-
+            itemGameObjects[i].transform.position = new Vector3(0,-1,0);
         }
 
     }
@@ -295,38 +288,23 @@ public class SurvivalItemController : MonoBehaviour
             InitialiseReferences();
         }
 
-        /*
-        if (!PhotonNetwork.IsMasterClient)
+        if (!NetworkManager.Singleton.IsServer)
         {
             return;
         }
-        */
 
         foreach (GameObject obj in itemGameObjects)
         {
-            //PhotonView photonView = obj.GetComponent<PhotonView>();
-            //photonView.RequestOwnership();
+
+            if (!obj.GetComponent<NetworkBehaviour>().IsOwner)
+            {
+                obj.GetComponent<NetworkObject>().ChangeOwnership(NetworkManager.Singleton.LocalClientId);
+            }
 
             obj.GetComponent<Rigidbody>().isKinematic = true;
-            obj.SetActive(false);
-            //obj.transform.position = new Vector3(0f, -1f, 0f);
+            obj.transform.position = new Vector3(0, -1, 0);
         }
     }
 
-    /*
-    // partial implementation of IPunOwnershipCallbacks to react object is transferred to another player
-    public void OnOwnershipTransfered(PhotonView targetView, Player previousOwner)
-    {
-        // set transferred object to kinematic, so gravity is disabled (the new owner will handle gravity)
-        GameObject obj = targetView.gameObject;
-        obj.GetComponent<Rigidbody>().isKinematic = true;
-    }
 
-    public void OnOwnershipRequest(PhotonView targetView, Player requestingPlayer)
-    {
-    }
-    public void OnOwnershipTransferFailed(PhotonView targetView, Player senderOfFailedRequest)
-    {
-    }
-    */
 }
