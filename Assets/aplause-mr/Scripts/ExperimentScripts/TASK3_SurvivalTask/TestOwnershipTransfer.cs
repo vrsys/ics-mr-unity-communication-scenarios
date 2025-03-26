@@ -1,6 +1,9 @@
 using Unity.Netcode;
 using UnityEngine;
 
+// TODO mirror / inherit from InteractableNetworkState to check grabbed state before transferring ownership
+
+
 public class TestOwnershipTransfer : NetworkBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
