@@ -5,6 +5,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using Unity.Netcode;
+using Unity.Netcode.Components;
 using UnityEngine;
 
 public class SurvivalItemController : NetworkBehaviour
@@ -198,9 +199,14 @@ public class SurvivalItemController : NetworkBehaviour
 
     private void PositionItems()
     {
+        foreach (GameObject obj in itemGameObjects)
+        {
+            obj.GetComponent<NetworkRigidbody>().AutoUpdateKinematicState = true;
+        }
 
         if (!NetworkManager.Singleton.IsServer)
         {
+
             return;
         }
 
