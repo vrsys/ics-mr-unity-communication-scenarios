@@ -2,6 +2,7 @@ using System.IO;
 using UnityEditor;
 using UnityEngine;
 
+#if UNITY_EDITOR
 public class SaveAsset
 {
     public static void SaveMeshAsset(Mesh mesh, string path)
@@ -20,3 +21,4 @@ public class SaveAsset
     }
 
 }
+#endif

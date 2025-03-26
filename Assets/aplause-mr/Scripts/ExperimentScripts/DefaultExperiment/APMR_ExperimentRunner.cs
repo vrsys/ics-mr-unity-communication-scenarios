@@ -78,6 +78,8 @@ public class APMR_ExperimentRunner : NetworkBehaviour
 
     private int numberOfTrials;
     private string studyDataFilePathBase = "";
+    private bool studyDataCanBeWritten = false;
+
 
     private bool shouldAdvanceExperiment = false;
     private bool experimentStarted = false;
@@ -151,6 +153,7 @@ public class APMR_ExperimentRunner : NetworkBehaviour
             {
                 writer.WriteLine("test");
             }
+            studyDataCanBeWritten = true;
         }
         catch (System.Exception e)
         {
@@ -312,11 +315,21 @@ public class APMR_ExperimentRunner : NetworkBehaviour
 
     void WriteExperimentData()
     {
-
+        if (!studyDataCanBeWritten)
+        {
+            Debug.LogWarning("Tried to write data but data could not be written upon initial test");
+            return;
+        }
     }
 
     void WriteTrialData(int trialNum)
     {
+        if (!studyDataCanBeWritten)
+        {
+            Debug.LogWarning("Tried to write data but data could not be written upon initial test");
+            return;
+        }
+
         TrialData trialData = new TrialData
         {
             trialNumber = trialNum,
