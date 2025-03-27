@@ -2530,14 +2530,14 @@ GameObject:
   m_Component:
   - component: {fileID: 1196039992}
   - component: {fileID: 1196039991}
-  - component: {fileID: 1196039994}
   - component: {fileID: 1196039989}
   - component: {fileID: 1196039988}
   - component: {fileID: 1196039987}
   - component: {fileID: 1196039986}
-  - component: {fileID: 1196039993}
   - component: {fileID: 1196039984}
   - component: {fileID: 1196039983}
+  - component: {fileID: 1196039994}
+  - component: {fileID: 1196039993}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -2817,12 +2817,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1196039982}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1175d4c69579d54faa82ae10441d03c, type: 3}
+  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
-  NetworkTransformExpanded: 1
-  AuthorityMode: 0
+  NetworkTransformExpanded: 0
+  AuthorityMode: 1
   TickSyncChildren: 0
   UseUnreliableDeltas: 0
   SyncPositionX: 1
@@ -5433,7 +5433,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3130830557821445414, guid: 0f874d7acb686f644b6043ba39bba74f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 17
+      value: 16.999939
       objectReference: {fileID: 0}
     - target: {fileID: 3130830557849588012, guid: 0f874d7acb686f644b6043ba39bba74f, type: 3}
       propertyPath: m_AnchorMax.x
