@@ -125,6 +125,7 @@ namespace VRSYS.Core.Interaction
             
             if (IsOwner)
                 return;
+            rayData.OnValueChanged += OnRayDataChanged;
             ApplyRayUpdates();
         }
 
@@ -203,6 +204,15 @@ namespace VRSYS.Core.Interaction
             }
         }
     
+        #endregion
+
+        #region Custom Methods
+
+        private void OnRayDataChanged(RayData previousvalue, RayData newvalue)
+        {
+            rayData.Value = newvalue;
+        }
+
         #endregion
     }
 }
