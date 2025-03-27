@@ -2112,8 +2112,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 888595018}
-  - component: {fileID: 888595017}
   - component: {fileID: 888595019}
+  - component: {fileID: 888595017}
   m_Layer: 0
   m_Name: SurvivalItems
   m_TagString: Untagged
@@ -5222,7 +5222,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3130830557821445414, guid: 0f874d7acb686f644b6043ba39bba74f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 17
+      value: 16.999939
       objectReference: {fileID: 0}
     - target: {fileID: 3130830557849588012, guid: 0f874d7acb686f644b6043ba39bba74f, type: 3}
       propertyPath: m_AnchorMax.x
