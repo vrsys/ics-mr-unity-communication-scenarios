@@ -47,8 +47,8 @@ public class DifferenceObjectController : MonoBehaviour
     private List<bool> markerStates0;
     private List<bool> markerStates1;
 
-    private List<CubeMarker> marker0;
-    private List<CubeMarker> marker1;
+    private List<CubeMarker> markers0;
+    private List<CubeMarker> markers1;
     
     private int activeTrial;
 
@@ -74,8 +74,8 @@ public class DifferenceObjectController : MonoBehaviour
         boxSetTrainingRoot1.SetActive(false);
 
     
-        marker0 = new List<CubeMarker>();
-        marker1 = new List<CubeMarker>();
+        markers0 = new List<CubeMarker>();
+        markers1 = new List<CubeMarker>();
     }
 
 
@@ -150,7 +150,6 @@ public class DifferenceObjectController : MonoBehaviour
 
         ShowBoxes();
         CreateShapesForBoxes();
-        //InitMarkerStateArrays();
     }
 
 
@@ -165,12 +164,6 @@ public class DifferenceObjectController : MonoBehaviour
         shapes.Clear();
     }
 
-    private void InitMarkerStateArrays()
-    {
-        //markerStates0 = new List<bool>( new bool[numCubeMarkersPerParticipant] );
-        //markerStates1 = new List<bool>( new bool[numCubeMarkersPerParticipant] );
-
-    }
 
     void RemoteMarkerSet(bool state, int id, int shapeSet)
     {
@@ -187,12 +180,10 @@ public class DifferenceObjectController : MonoBehaviour
         if (shapeSet == 0)
         {
             markerStates0[id] = state;
-            marker0[id].SetMarkerState(state);
         }
         else if (shapeSet == 1)
         {
             markerStates1[id] = state;
-            marker1[id].SetMarkerState(state);
         }
         
         /*
@@ -374,93 +365,40 @@ public class DifferenceObjectController : MonoBehaviour
 
 
     }
-    /*
 
-private void AttachShapesToBoxes()
-{
-
-    if (activeTrial > objectIDsWithDifferencesPerTrial.Count - 1)
+    private void ResetCubeMarkers(List<GameObject> activeBoxes0, List<GameObject> activeBoxes1)
     {
-        Debug.LogError("Trial number too large");
-    }
-
-    List<Transform> doubledShapeTransforms = GetAllChildren(doubledShapes.transform);
-    List<Transform> differentShapeTransforms = GetAllChildren(differentShapes.transform.Find("Trial" + activeTrial).transform.transform);
 
 
-    int doubledShapesPlaced = 0;
-    int differentShapesPlaced = 0;
+        markerStates0 = new List<bool>( new bool[activeBoxes0.Count] );
+        markerStates1 = new List<bool>( new bool[activeBoxes0.Count] );
 
-    List<int> objectIDsWithDifferences = objectIDsWithDifferencesPerTrial[activeTrial];
-
-    List<GameObject> activeDiffObjects0;
-    List<GameObject> activeDiffObjects1;
-
-    if (shadowingActive)
-    {
-        activeDiffObjects0 = boxSetStacked0;
-        activeDiffObjects1 = boxSetStacked1;
-    }
-    else
-    {
-        activeDiffObjects0 = boxSetSpread0;
-        activeDiffObjects1 = boxSetSpread1;
-    }
-
-
-    marker0.Clear();
-    marker1.Clear();
-
-    for (int i = 0; i < numObjectsPerPerson; i++)
-    {
-        if (objectIDsWithDifferences.Contains(i))
+        if (null != markers0)
         {
-            int target_object_for_shape = objectIDsWithDifferencesPerTrial[activeTrial][differentShapesPlaced];
-
-            differentShapeTransforms[differentShapesPlaced * 2].position = activeDiffObjects0[target_object_for_shape].transform.position;
-            differentShapeTransforms[differentShapesPlaced * 2].rotation = activeDiffObjects0[target_object_for_shape].transform.rotation;
-
-            differentShapeTransforms[differentShapesPlaced * 2 + 1].position = activeDiffObjects1[target_object_for_shape].transform.position;
-            differentShapeTransforms[differentShapesPlaced * 2 + 1].rotation = activeDiffObjects1[target_object_for_shape].transform.rotation;
-
-            ++differentShapesPlaced;
+            markers0.Clear();
         }
-        else
+        if (null != markers1)
         {
-            int target_object_for_shape = objectIDsWithoutDifferencesPerTrial[activeTrial][doubledShapesPlaced];
-
-            doubledShapeTransforms[doubledShapesPlaced * 2].position = activeDiffObjects0[target_object_for_shape].transform.position;
-            doubledShapeTransforms[doubledShapesPlaced * 2].rotation = activeDiffObjects0[target_object_for_shape].transform.rotation;
-
-            doubledShapeTransforms[doubledShapesPlaced * 2 + 1].position = activeDiffObjects1[target_object_for_shape].transform.position;
-            doubledShapeTransforms[doubledShapesPlaced * 2 + 1].rotation = activeDiffObjects1[target_object_for_shape].transform.rotation;
-
-            ++doubledShapesPlaced;
-
+            markers1.Clear();
         }
 
-        bool isDifference = false;
-        if(objectIDsWithDifferencesPerTrial[activeTrial].Contains(i))
-            isDifference = true;
 
+        for (int i = 0; i < activeBoxes0.Count; i++)
+        {
+            // set cube ID to enable marker to report which cube has been selected, and give reference 
+            CubeMarker cubeMarker0 = activeBoxes0[i].transform.GetComponent<CubeMarker>();
+            cubeMarker0.ResetMarker(i, 0);
+            markers0.Add(cubeMarker0);
 
-        // set cube ID to enable marker to report which cube has been selected, and give reference 
-        CubeMarker cubeMarker0 = activeDiffObjects0[i].transform.GetComponent<CubeMarker>();
-        cubeMarker0.id = i;
-        cubeMarker0.diffObjectsController = this;
-        cubeMarker0.shapeSet = 0;
-        cubeMarker0.isDifferenceCube = isDifference;
-        marker0.Add(cubeMarker0);
-
-        CubeMarker cubeMarker1 = activeDiffObjects1[i].transform.GetComponent<CubeMarker>();
-        cubeMarker1.id = i;
-        cubeMarker1.diffObjectsController = this;
-        cubeMarker1.shapeSet = 1;
-        cubeMarker1.isDifferenceCube = isDifference;
-        marker1.Add(cubeMarker1);
-
+            CubeMarker cubeMarker1 = activeBoxes1[i].transform.GetComponent<CubeMarker>();
+            cubeMarker0.ResetMarker(i, 1);
+            markers1.Add(cubeMarker1);
+        }
     }
 
-}
-    */
+
+    private void Update()
+    {
+        // TODO check if task is complete?
+    }
 }

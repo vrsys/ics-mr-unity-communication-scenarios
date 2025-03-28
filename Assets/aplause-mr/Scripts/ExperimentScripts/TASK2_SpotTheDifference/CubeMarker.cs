@@ -1,45 +1,68 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
-public class CubeMarker : MonoBehaviour
+public class CubeMarker : NetworkBehaviour
 {
     [HideInInspector]
-    public bool markerVisible;
+    //public bool markerVisible;
 
     private Transform markerTransform;
 
     private Vector3 markerVisibleLocalPosition;
     private Vector3 markerHiddenLocalPosition;
 
-    public int id;
-    public int shapeSet;
-    public bool isDifferenceCube;
-    public DifferenceObjectController diffObjectsController;
+    private int cubeId;
+    private int playerId;
+    private DifferenceObjectController diffObjectsController;
 
     private float timeOfLastTrigger;
+
+
+    [HideInInspector]
+    public NetworkVariable<bool> isMarked = new NetworkVariable<bool>(false,
+        NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
 
     // Start is called before the first frame update
     void Start()
     {
-        markerVisible = false;
+        //markerVisible = false;
+
         markerTransform = gameObject.transform.Find("Marker");
         if (markerTransform == null)
         {
             Debug.Log("No marker found for cube: " + GetPath(gameObject.transform));
         }
 
-        MarkerResetBroadcaster markerResetBroadcaster = GameObject.Find("MarkerResetBroadcaster").GetComponent<MarkerResetBroadcaster>();
-        markerResetBroadcaster.Reset += new MarkerResetBroadcaster.BroadcastHandler(ResetMarker);
+        //MarkerResetBroadcaster markerResetBroadcaster = FindAnyObjectByType<MarkerResetBroadcaster>();
+        //markerResetBroadcaster.Reset += new MarkerResetBroadcaster.BroadcastHandler(ResetMarker);
+
+        diffObjectsController = FindAnyObjectByType<DifferenceObjectController>();
+
+        if (null == diffObjectsController)
+        {
+            Debug.LogError("no controller found");
+        }
+        //if (null == markerResetBroadcaster)
+        //{
+        //    Debug.LogError("no reset broadcaster found");
+        //}
+
 
         markerVisibleLocalPosition = markerTransform.localPosition;
         markerHiddenLocalPosition = markerVisibleLocalPosition + new Vector3(0f,0f,0.1f);
 
-        UpdateMarker();
-
         timeOfLastTrigger = Time.time;
 
+    }
+
+    public void ResetMarker(int _cubeId, int _playerId)
+    {
+        cubeId = _cubeId;
+        playerId = _playerId;
+        UpdateMarkerStateRpc(false);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -50,33 +73,18 @@ public class CubeMarker : MonoBehaviour
             return;
         }
 
-        bool newState = !markerVisible;
-
-        if (diffObjectsController != null) {
-            diffObjectsController.MarkerSet(newState, id, shapeSet);
-        } else {
-            SetMarkerState(newState);
-        }
+        UpdateMarkerStateRpc(!isMarked.Value);
 
         timeOfLastTrigger = Time.time;
     }
 
-    public void SetMarkerState(bool state)
+
+    [Rpc(SendTo.Server)]
+    public void UpdateMarkerStateRpc(bool newState)
     {
-        markerVisible = state;
-        UpdateMarker();
+        isMarked.Value = newState;
     }
-    
-    private void UpdateMarker()
-    {
-        if (markerVisible)
-        {
-            markerTransform.localPosition = markerVisibleLocalPosition;
-        } else
-        {
-            markerTransform.localPosition = markerHiddenLocalPosition;
-        }
-    }
+
     public static string GetPath(Transform current)
     {
         if (current.parent == null)
@@ -84,10 +92,17 @@ public class CubeMarker : MonoBehaviour
         return GetPath(current.parent) + "/" + current.name;
     }
 
-    private void ResetMarker(MarkerResetBroadcaster b, EventArgs e)
-    {
-        markerVisible = false;
-        UpdateMarker();
-    }
 
+
+    private void Update()
+    {
+        if (isMarked.Value)
+        {
+            markerTransform.localPosition = markerVisibleLocalPosition;
+        }
+        else
+        {
+            markerTransform.localPosition = markerHiddenLocalPosition;
+        }
+    }
 }
