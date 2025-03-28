@@ -89,6 +89,7 @@ public class SurvivalItemController : NetworkBehaviour
 
             newGameObject.name = survivalItemPrefab.name + i.ToString("000");
             newGameObject.transform.SetParent(transform, false);
+            newGameObject.transform.localPosition = new Vector3(0, -1, 0);
 
         }
 
