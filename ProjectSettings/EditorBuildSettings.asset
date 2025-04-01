@@ -23,7 +23,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/aplause-mr/Scenes/NetworkedScenes/TASK2_NetworkedExperimentScene.unity
     guid: 7be4598d1b30f984284e6ea6582d476f
-  - enabled: 0
+  - enabled: 1
     path: Assets/aplause-mr/Scenes/NetworkedScenes/TASK3_NetworkedExperimentScene.unity
     guid: 519a993886963034d8d48c18b3e2f9ff
   - enabled: 0
@@ -32,7 +32,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/aplause-mr/Scenes/NetworkedScenes/TASK1_NetworkedExperimentScene.unity
     guid: 2035ca98789d15b4594a4a62a0fa84fe
-  - enabled: 1
+  - enabled: 0
     path: Assets/VRSYS/Core/Demo/Demo Scenes/Single-Scene Setup/VRSYS-SingleSceneDistributionTest.unity
     guid: 2ba84719b1b06394a9b15d574ac748de
   m_configObjects:
