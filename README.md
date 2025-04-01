@@ -4,21 +4,21 @@ This repository contains Unity implementations corresponding to the following co
 
 1. Floor Plan Negotiation
 	* TODO description
-	* Task used in study: 
-
-Felix Immohr, Gareth Rendle, Annika Neidhardt, Steve Göring, Rakesh Rao Ramachandra Rao, Stephanie Arevalo Arboleda, Bernd Froehlich, and Alexander Raake. 2023. Proof-of-Concept Study to Evaluate the Impact of Spatial Audio on Social Presence and User Behavior in Multi-Modal VR Communication. In Proceedings of the 2023 ACM International Conference on Interactive Media Experiences (IMX '23). Association for Computing Machinery, New York, NY, USA, 209–215. [https://doi.org/10.1145/3573381.3596458](https://doi.org/10.1145/3573381.3596458)
+	* This task was used in the publication: Felix Immohr, Gareth Rendle, Annika Neidhardt, Steve Göring, Rakesh Rao Ramachandra Rao, Stephanie Arevalo Arboleda, Bernd Froehlich, and Alexander Raake. 2023. _Proof-of-Concept Study to Evaluate the Impact of Spatial Audio on Social Presence and User Behavior in Multi-Modal VR Communication_. In Proceedings of the 2023 ACM International Conference on Interactive Media Experiences (IMX '23). Association for Computing Machinery, New York, NY, USA, 209–215. DOI: [10.1145/3573381.3596458](https://doi.org/10.1145/3573381.3596458).
 
 2. Spot-the-difference collaborative task
 	* TODO description
-	* Task used in study: TODO ref
+	* This task was used in the publication: Felix Immohr, Gareth Rendle, Anton Lammert, Annika Neidhardt, Victoria Meyer Zur Heyde, Bernd Froehlich, and Alexander Raake. 2024. _Evaluating the Effect of Binaural Auralization on Audiovisual Plausibility and Communication Behavior in Virtual Reality_. In 2024 IEEE Conference Virtual Reality and 3D User Interfaces (VR), Orlando, FL, USA, 2024, pp. 849-858. DOI: [10.1109/VR58804.2024.00104](https://doi.org/10.1109/VR58804.2024.00104). 
 
 3. Survival Task (with interactable objects)
 	* TODO description
-	* Task used in study: TODO ref
+	* This task was used in the publication: Felix Immohr, Gareth Rendle, Christian Kehling, Anton Lammert, Steve Göring, Bernd Froehlich, and Alexander Raake. 2024. _Subjective Evaluation of the Impact of Spatial Audio on Triadic Communication in Virtual Reality_. In 2024 16th International Conference on Quality of Multimedia Experience (QoMEX), Karlshamn, Sweden, 2024, pp. 262-265. DOI: [10.1109/QoMEX61742.2024.10598292](https://doi.org/10.1109/QoMEX61742.2024.10598292).
 
 4. Survival Task (without interactable objects)
 	* In this version of the task, all materials (i.e. scenario descriptions and survival items) are distributed to participants on paper. Therefore, the only changes in the scene are the appearance of signs to notify participants about the progression of the experiment. 
-	* Task used in study: TODO ref
+	* This task was used in the publication: Gareth Rendle, Felix Immohr, Christian Kehling, Anton Lammert, Adrian Kreskowski, Karlheinz Brnadenburg, Alexander Raake, and Bernd Froehlich. 2025. _Influence of Audiovisual Realism on Communication Behaviour in Group-to-Group Telepresence_. In 2025 IEEE Conference Virtual Reality and 3D User Interfaces (VR), Saint Malo, France, 2025, pp. 569-579, DOI: [10.1109/VR59515.2025.00080](https://doi.org/10.1109/VR59515.2025.00080).
+
+
 
 
 # Usage Notes
