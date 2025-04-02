@@ -64,14 +64,6 @@ public class DifferenceObjectController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Init();
-
-        boxSetStackedRoot0.SetActive(false);
-        boxSetStackedRoot1.SetActive(false);
-        boxSetSpreadRoot0.SetActive(false);
-        boxSetSpreadRoot1.SetActive(false);
-        boxSetTrainingRoot0.SetActive(false);
-        boxSetTrainingRoot1.SetActive(false);
 
     
         markers0 = new List<CubeMarker>();
@@ -94,7 +86,7 @@ public class DifferenceObjectController : MonoBehaviour
         return foundObjects;
     }
 
-    void Init() {
+    public void Initialize() {
 
         if (GetAllChildrenWithTag(boxSetSpreadRoot0.transform, "DiffObject").Count != GetAllChildrenWithTag(boxSetSpreadRoot1.transform, "DiffObject").Count)
         {
@@ -109,8 +101,9 @@ public class DifferenceObjectController : MonoBehaviour
             Debug.LogError("Two sets of difference objects have different numbers of objects");
         }
 
+        HideAllBoxes();
 
-   
+
     }
 
     private List<Transform> GetAllChildren(Transform parent)
@@ -127,6 +120,7 @@ public class DifferenceObjectController : MonoBehaviour
 
     public void InitializeBoxesAndShapesForTrial(int trial, bool _showStackedBoxes)
     {
+
         //taskComplete = false;
 
         activeTrial = trial;
@@ -155,7 +149,7 @@ public class DifferenceObjectController : MonoBehaviour
 
     public void HideBoxesAndShapes()
     {
-        HideBoxes();
+        HideActiveBoxes();
 
         foreach (var shape in shapes)
         {
@@ -238,9 +232,17 @@ public class DifferenceObjectController : MonoBehaviour
     }
 
 
+    private void HideAllBoxes()
+    {
+        boxSetStackedRoot0.SetActive(false);
+        boxSetStackedRoot1.SetActive(false);
+        boxSetSpreadRoot0.SetActive(false);
+        boxSetSpreadRoot1.SetActive(false);
+        boxSetTrainingRoot0.SetActive(false);
+        boxSetTrainingRoot1.SetActive(false);
+    }
 
-
-    private void HideBoxes()
+    private void HideActiveBoxes()
     {
 
         if (activeBoxesRoot0 != null)

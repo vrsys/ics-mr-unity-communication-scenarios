@@ -119,6 +119,8 @@ namespace VRSYS.Core.Interaction
 
         protected override void OnSelectEntered(SelectEnterEventArgs args)
         {
+            Debug.Log("on select entered");
+
             if (!networkState.isGrabbed.Value || isLocallyGrabbed)
             {
                 isLocallyGrabbed = true;

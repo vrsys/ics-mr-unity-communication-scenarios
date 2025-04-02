@@ -5,6 +5,12 @@ public class TASK2_SceneController : APMR_SceneController
 {
     public DifferenceObjectController differenceObjectController;
 
+    public override void StartExperiment()
+    {
+        differenceObjectController.Initialize();
+    }
+
+
     public override void PrepareScene(int trialIndex, APMR_ExperimentRunner.Condition condition)
     {
         base.PrepareScene(trialIndex, condition);
