@@ -361,7 +361,7 @@ public class APMR_ExperimentRunner : NetworkBehaviour
 
 
     [ServerRpc(RequireOwnership = false)]
-    private void NotifyServerToAdvanceExperimentServerRpc(ServerRpcParams serverRpcParams = default)
+    public void NotifyServerToAdvanceExperimentServerRpc(ServerRpcParams serverRpcParams = default)
     {
         AdvanceExperimentClientRpc();
     }

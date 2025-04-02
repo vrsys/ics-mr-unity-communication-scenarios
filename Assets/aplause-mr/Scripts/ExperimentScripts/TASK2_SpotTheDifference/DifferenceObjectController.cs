@@ -8,6 +8,7 @@ using System.Xml.Linq;
 using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 using CsvHelper;
+using Unity.Netcode;
 
 public class DifferenceObjectController : MonoBehaviour
 {
@@ -32,6 +33,8 @@ public class DifferenceObjectController : MonoBehaviour
 
     //private bool taskComplete = false;
 
+    private APMR_ExperimentRunner experimentRunner;
+
     public class ShapeInfo
     {
 
@@ -42,14 +45,11 @@ public class DifferenceObjectController : MonoBehaviour
         public string p1_shape { get; set; }
     }
 
+    // state of markers represented as bits in an integer
+    private int markerStates0 = 0;
+    private int markerStates1 = 0;
+    private int targetMarkerState = 0;
 
-
-    private List<bool> markerStates0;
-    private List<bool> markerStates1;
-
-    private List<CubeMarker> markers0;
-    private List<CubeMarker> markers1;
-    
     private int activeTrial;
 
     private List<GameObject> shapes = new List<GameObject>();
@@ -64,23 +64,27 @@ public class DifferenceObjectController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-    
-        markers0 = new List<CubeMarker>();
-        markers1 = new List<CubeMarker>();
+        experimentRunner = FindAnyObjectByType<APMR_ExperimentRunner>();
     }
 
 
+    // preserves hierarchy order when getting children with tag
     public static List<GameObject> GetAllChildrenWithTag(Transform parent, string tag)
     {
         List<GameObject> foundObjects = new List<GameObject>();
 
-        foreach (Transform child in parent.GetComponentsInChildren<Transform>(true)) // true = include inactive objects
+        // Loop through children in the order they appear in the Hierarchy
+        for (int i = 0; i < parent.childCount; i++)
         {
+            Transform child = parent.GetChild(i); // Get child by index (preserves order)
+
             if (child.CompareTag(tag)) // Check if the child's tag matches
             {
                 foundObjects.Add(child.gameObject);
             }
+
+            // Recursively check the child's children while maintaining order
+            foundObjects.AddRange(GetAllChildrenWithTag(child, tag));
         }
 
         return foundObjects;
@@ -106,23 +110,8 @@ public class DifferenceObjectController : MonoBehaviour
 
     }
 
-    private List<Transform> GetAllChildren(Transform parent)
-    {
-        List<Transform> transformList = new List<Transform>();
-        foreach (Transform child in parent)
-        {
-            transformList.Add(child);
-        }
-        return transformList;
-    }
-
-
-
     public void InitializeBoxesAndShapesForTrial(int trial, bool _showStackedBoxes)
     {
-
-        //taskComplete = false;
-
         activeTrial = trial;
 
         if (trial < 0)
@@ -157,80 +146,6 @@ public class DifferenceObjectController : MonoBehaviour
         }
         shapes.Clear();
     }
-
-
-    void RemoteMarkerSet(bool state, int id, int shapeSet)
-    {
-        Debug.Log("Received remote marker set call. Set: " + shapeSet + ", id: " + id + ", state: " + state);
-        
-        LocalMarkerSet(state, id, shapeSet);
-    }
-
-
-    void LocalMarkerSet(bool state, int id, int shapeSet)
-    {
-        Debug.Log("Received local marker set call. Set: " + shapeSet + ", id: " + id + ", state: " + state);
-        
-        if (shapeSet == 0)
-        {
-            markerStates0[id] = state;
-        }
-        else if (shapeSet == 1)
-        {
-            markerStates1[id] = state;
-        }
-        
-        /*
-        if (IsTaskComplete())
-        {
-            taskComplete = true;
-        }
-        */
-    }
-    
-    
-    public void MarkerSet(bool state, int id, int shapeSet)
-    {
-        // TODO support remote marker setting
-        //photonView.RPC("RemoteMarkerSet", RpcTarget.Others, state, id , shapeSet);
-
-        LocalMarkerSet(state, id, shapeSet);
-    }
-
-    private bool IsTaskComplete()
-    {
-        /*
-
-        int numDiffObjects = objectIDsWithoutDifferencesPerTrial[activeTrial].Count + objectIDsWithDifferencesPerTrial[activeTrial].Count;
-        List<int> diffLocations = objectIDsWithDifferencesPerTrial[activeTrial];
-
-        // check for any errors in marker state
-        for (int i = 0; i < numDiffObjects; i++)
-        {
-            // if should be a difference at this ID
-            if (diffLocations.Contains(i))
-            {
-                //if (markerStates0[i] == false)
-                if (markerStates0[i] == false || markerStates1[i] == false)
-                {
-                    return false;
-                }
-            }
-            // if should NOT be a difference at this ID
-            else
-            {
-                //if (markerStates0[i] == true)
-                if (markerStates0[i] == true || markerStates1[i] == true)
-                {
-                    return false;
-                }
-            }
-        }
-
-        */
-        return true;
-    }
-
 
     private void HideAllBoxes()
     {
@@ -330,6 +245,8 @@ public class DifferenceObjectController : MonoBehaviour
 
         }
 
+        // count differences and get target marker state
+        targetMarkerState = 0;
 
         int numDifferences = 0;
         for (int i = 0; i < shapeInfo.Count; i++)
@@ -337,6 +254,7 @@ public class DifferenceObjectController : MonoBehaviour
             if (shapeInfo[i].p0_col != shapeInfo[i].p1_col || shapeInfo[i].p0_shape != shapeInfo[i].p1_shape)
             {
                 ++numDifferences;
+                targetMarkerState |= (1 << i);
             }
         }
 
@@ -365,6 +283,7 @@ public class DifferenceObjectController : MonoBehaviour
 
         }
 
+        ResetCubeMarkers(activeBoxes0, activeBoxes1);
 
     }
 
@@ -372,35 +291,42 @@ public class DifferenceObjectController : MonoBehaviour
     {
 
 
-        markerStates0 = new List<bool>( new bool[activeBoxes0.Count] );
-        markerStates1 = new List<bool>( new bool[activeBoxes0.Count] );
+        markerStates0 = 0; 
+        markerStates1 = 0; 
 
-        if (null != markers0)
-        {
-            markers0.Clear();
-        }
-        if (null != markers1)
-        {
-            markers1.Clear();
-        }
 
 
         for (int i = 0; i < activeBoxes0.Count; i++)
         {
             // set cube ID to enable marker to report which cube has been selected, and give reference 
             CubeMarker cubeMarker0 = activeBoxes0[i].transform.GetComponent<CubeMarker>();
-            cubeMarker0.ResetMarker(i, 0);
-            markers0.Add(cubeMarker0);
+            cubeMarker0.InitializeMarker(i, 0);
 
             CubeMarker cubeMarker1 = activeBoxes1[i].transform.GetComponent<CubeMarker>();
-            cubeMarker0.ResetMarker(i, 1);
-            markers1.Add(cubeMarker1);
+            cubeMarker1.InitializeMarker(i, 1);
+        }
+    }
+
+    [Rpc(SendTo.Server)]
+    public void CheckIfTaskIsCompleteRpc(int _cubeId, int _playerId, bool _state)
+    {
+        // set bit corresponding to updated cube to new value
+        if (0 == _playerId)
+        {
+            markerStates0 = (markerStates0 & ~(1 << _cubeId)) | ((Convert.ToInt32(_state) & 1) << _cubeId);
+        }
+        else if (1 == _playerId)
+        {
+            markerStates1 = (markerStates1 & ~(1 << _cubeId)) | ((Convert.ToInt32(_state) & 1) << _cubeId);
+        }
+
+        // check if it aligns with desired value
+        if (targetMarkerState == markerStates0 && targetMarkerState == markerStates1)
+        {
+            Debug.Log("Task complete!");
+            experimentRunner.NotifyServerToAdvanceExperimentServerRpc();
         }
     }
 
 
-    private void Update()
-    {
-        // TODO check if task is complete?
-    }
 }

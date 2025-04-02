@@ -66,7 +66,7 @@ public class CubeMarker : NetworkBehaviour
         }
 
         markerVisibleLocalPosition = markerTransform.localPosition;
-        markerHiddenLocalPosition = markerVisibleLocalPosition + new Vector3(0f,0f,0.1f);
+        markerHiddenLocalPosition = markerVisibleLocalPosition + new Vector3(0f, 0f, 0.1f);
 
         timeOfLastTrigger = Time.time;
 
@@ -74,7 +74,7 @@ public class CubeMarker : NetworkBehaviour
 
     }
 
-    public void ResetMarker(int _cubeId, int _playerId)
+    public void InitializeMarker(int _cubeId, int _playerId)
     {
         cubeId = _cubeId;
         playerId = _playerId;
@@ -96,18 +96,22 @@ public class CubeMarker : NetworkBehaviour
         // since all users have colliders on their hands which could trigger thuis function, 
         // only let the server trigger it
         if (IsServer)
+        {
             UpdateMarkerStateRpc(!isMarked.Value);
+
+            // prompt difference object controller to check if task is complete
+            diffObjectsController.CheckIfTaskIsCompleteRpc(cubeId, playerId, isMarked.Value);
+        }
+
 
         timeOfLastTrigger = Time.time;
     }
 
 
     [Rpc(SendTo.Server)]
-    public void UpdateMarkerStateRpc(bool newState, RpcParams rpcParams = default)
+    public void UpdateMarkerStateRpc(bool newState)
     {
         isMarked.Value = newState;
-
-        // TODO prompt difference object controller to check if task is complete
     }
 
     public static string GetPath(Transform current)
@@ -116,5 +120,6 @@ public class CubeMarker : NetworkBehaviour
             return "/" + current.name;
         return GetPath(current.parent) + "/" + current.name;
     }
+
 
 }
