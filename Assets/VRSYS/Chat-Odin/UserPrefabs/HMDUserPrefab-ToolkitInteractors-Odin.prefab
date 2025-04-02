@@ -2698,7 +2698,7 @@ MonoBehaviour:
     - {fileID: 7757224813935989230}
     affectedRenderers: []
     affectedColliders:
-    - {fileID: 0}
+    - {fileID: 6202532483887047746}
     initialName: 
   appendStateToName: 1
   cycleNext: 0
@@ -2794,7 +2794,7 @@ MonoBehaviour:
     - {fileID: 3529796471382873052}
     affectedRenderers: []
     affectedColliders:
-    - {fileID: 0}
+    - {fileID: 7650074552488755083}
     initialName: 
   appendStateToName: 1
   cycleNext: 0

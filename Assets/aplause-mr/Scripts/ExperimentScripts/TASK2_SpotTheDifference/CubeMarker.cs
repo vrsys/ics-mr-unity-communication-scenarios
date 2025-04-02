@@ -23,7 +23,7 @@ public class CubeMarker : NetworkBehaviour
 
 
     [HideInInspector]
-    public NetworkVariable<bool> isMarked = new NetworkVariable<bool>(false,
+    private NetworkVariable<bool> isMarked = new NetworkVariable<bool>(false,
         NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
 
     public override void OnNetworkSpawn()
@@ -38,7 +38,6 @@ public class CubeMarker : NetworkBehaviour
 
     private void SetMarkerPosition(bool previous, bool current)
     {
-        Debug.Log("marker position set to " + (isMarked.Value ? "visible" : "not visible"));
         if (isMarked.Value)
         {
             markerTransform.localPosition = markerVisibleLocalPosition;
@@ -86,7 +85,7 @@ public class CubeMarker : NetworkBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("trigger enter");
+
 
         float timeSinceAcceptedTrigger = Time.time - timeOfLastTrigger;
         if (timeSinceAcceptedTrigger < 0.2f)
@@ -94,18 +93,18 @@ public class CubeMarker : NetworkBehaviour
             return;
         }
 
-        UpdateMarkerStateRpc(!isMarked.Value);
+        // since all users have colliders on their hands which could trigger thuis function, 
+        // only let the server trigger it
+        if (IsServer)
+            UpdateMarkerStateRpc(!isMarked.Value);
 
         timeOfLastTrigger = Time.time;
     }
 
 
     [Rpc(SendTo.Server)]
-    public void UpdateMarkerStateRpc(bool newState)
+    public void UpdateMarkerStateRpc(bool newState, RpcParams rpcParams = default)
     {
-        Debug.Log("marker state set to " + (isMarked.Value ? "visible" : "not visible"));
-
-
         isMarked.Value = newState;
 
         // TODO prompt difference object controller to check if task is complete
