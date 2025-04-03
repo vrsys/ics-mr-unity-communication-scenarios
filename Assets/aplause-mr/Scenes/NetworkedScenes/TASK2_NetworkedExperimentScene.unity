@@ -392,6 +392,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2958980188
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1219917105
+      objectReference: {fileID: 0}
     - target: {fileID: 8679919340704684898, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_Name
       value: MarkableCube
@@ -453,6 +461,14 @@ PrefabInstance:
     - target: {fileID: 1420796561209515633, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1616937755
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1219917105
       objectReference: {fileID: 0}
     - target: {fileID: 8679919340704684898, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_Name
@@ -516,6 +532,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3846802418
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1219917105
+      objectReference: {fileID: 0}
     - target: {fileID: 8679919340704684898, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_Name
       value: MarkableCube (2)
@@ -578,6 +602,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4132057692
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1219917105
+      objectReference: {fileID: 0}
     - target: {fileID: 8679919340704684898, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_Name
       value: MarkableCube (1)
@@ -639,6 +671,14 @@ PrefabInstance:
     - target: {fileID: 1420796561209515633, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 368845603
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1219917105
       objectReference: {fileID: 0}
     - target: {fileID: 8679919340704684898, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_Name
@@ -859,6 +899,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3836832932
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1219917105
+      objectReference: {fileID: 0}
     - target: {fileID: 8679919340704684898, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_Name
       value: MarkableCube (3)
@@ -921,6 +969,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3597846449
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1219917105
+      objectReference: {fileID: 0}
     - target: {fileID: 8679919340704684898, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_Name
       value: MarkableCube (5)
@@ -982,6 +1038,14 @@ PrefabInstance:
     - target: {fileID: 1420796561209515633, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2779096448
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1219917105
       objectReference: {fileID: 0}
     - target: {fileID: 8679919340704684898, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_Name
@@ -1189,6 +1253,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2016211189
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1219917105
+      objectReference: {fileID: 0}
     - target: {fileID: 8679919340704684898, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_Name
       value: MarkableCube (8)
@@ -1250,6 +1322,14 @@ PrefabInstance:
     - target: {fileID: 1420796561209515633, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4154761912
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1219917105
       objectReference: {fileID: 0}
     - target: {fileID: 8679919340704684898, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_Name
@@ -1888,6 +1968,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1509544132
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1219917105
+      objectReference: {fileID: 0}
     - target: {fileID: 8679919340704684898, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_Name
       value: MarkableCube
@@ -1950,6 +2038,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 719797540
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1219917105
+      objectReference: {fileID: 0}
     - target: {fileID: 8679919340704684898, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_Name
       value: MarkableCube (1)
@@ -2011,6 +2107,14 @@ PrefabInstance:
     - target: {fileID: 1420796561209515633, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2507910024
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1219917105
       objectReference: {fileID: 0}
     - target: {fileID: 8679919340704684898, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_Name
@@ -2243,6 +2347,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3824210823
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1219917105
+      objectReference: {fileID: 0}
     - target: {fileID: 8679919340704684898, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_Name
       value: MarkableCube
@@ -2305,6 +2417,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2685712293
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1219917105
+      objectReference: {fileID: 0}
     - target: {fileID: 8679919340704684898, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_Name
       value: MarkableCube (2)
@@ -2366,6 +2486,14 @@ PrefabInstance:
     - target: {fileID: 1420796561209515633, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 411676192
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1219917105
       objectReference: {fileID: 0}
     - target: {fileID: 8679919340704684898, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_Name
@@ -2573,6 +2701,14 @@ PrefabInstance:
     - target: {fileID: 1420796561209515633, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2809000778
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1219917105
       objectReference: {fileID: 0}
     - target: {fileID: 8679919340704684898, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_Name
@@ -2962,6 +3098,14 @@ PrefabInstance:
     - target: {fileID: 1420796561209515633, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 701871633
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1219917105
       objectReference: {fileID: 0}
     - target: {fileID: 8679919340704684898, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_Name
@@ -3551,6 +3695,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3551682288
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1219917105
+      objectReference: {fileID: 0}
     - target: {fileID: 8679919340704684898, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_Name
       value: MarkableCube (2)
@@ -3782,6 +3934,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1453742858
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1219917105
+      objectReference: {fileID: 0}
     - target: {fileID: 8679919340704684898, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_Name
       value: MarkableCube
@@ -3843,6 +4003,14 @@ PrefabInstance:
     - target: {fileID: 1420796561209515633, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1123851101
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1219917105
       objectReference: {fileID: 0}
     - target: {fileID: 8679919340704684898, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_Name
@@ -4042,6 +4210,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 257076422
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1219917105
+      objectReference: {fileID: 0}
     - target: {fileID: 8679919340704684898, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_Name
       value: MarkableCube (1)
@@ -4109,6 +4285,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1668296715
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1219917105
+      objectReference: {fileID: 0}
     - target: {fileID: 8679919340704684898, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_Name
       value: MarkableCube (5)
@@ -4170,6 +4354,14 @@ PrefabInstance:
     - target: {fileID: 1420796561209515633, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3505745397
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1219917105
       objectReference: {fileID: 0}
     - target: {fileID: 8679919340704684898, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_Name
@@ -4352,6 +4544,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1339061783
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1219917105
+      objectReference: {fileID: 0}
     - target: {fileID: 8679919340704684898, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_Name
       value: MarkableCube (1)
@@ -4484,6 +4684,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2949109161
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1219917105
+      objectReference: {fileID: 0}
     - target: {fileID: 8679919340704684898, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_Name
       value: MarkableCube (1)
@@ -4545,6 +4753,14 @@ PrefabInstance:
     - target: {fileID: 1420796561209515633, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 748210845
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1219917105
       objectReference: {fileID: 0}
     - target: {fileID: 8679919340704684898, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_Name
@@ -4608,6 +4824,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 764968407
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1219917105
+      objectReference: {fileID: 0}
     - target: {fileID: 8679919340704684898, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_Name
       value: MarkableCube (3)
@@ -4669,6 +4893,14 @@ PrefabInstance:
     - target: {fileID: 1420796561209515633, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 988189593
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1219917105
       objectReference: {fileID: 0}
     - target: {fileID: 8679919340704684898, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_Name
@@ -4868,6 +5100,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 895232154
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1219917105
+      objectReference: {fileID: 0}
     - target: {fileID: 8679919340704684898, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_Name
       value: MarkableCube
@@ -4929,6 +5169,14 @@ PrefabInstance:
     - target: {fileID: 1420796561209515633, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1322239796
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1219917105
       objectReference: {fileID: 0}
     - target: {fileID: 8679919340704684898, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_Name
@@ -5249,6 +5497,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1218039608
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1219917105
+      objectReference: {fileID: 0}
     - target: {fileID: 8679919340704684898, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_Name
       value: MarkableCube (3)
@@ -5310,6 +5566,14 @@ PrefabInstance:
     - target: {fileID: 1420796561209515633, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4186182776
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1219917105
       objectReference: {fileID: 0}
     - target: {fileID: 8679919340704684898, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_Name
@@ -5373,6 +5637,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4040433696
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1219917105
+      objectReference: {fileID: 0}
     - target: {fileID: 8679919340704684898, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_Name
       value: MarkableCube (4)
@@ -5434,6 +5706,14 @@ PrefabInstance:
     - target: {fileID: 1420796561209515633, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1784812588
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1219917105
       objectReference: {fileID: 0}
     - target: {fileID: 8679919340704684898, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_Name
@@ -5705,6 +5985,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2305721506
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1219917105
+      objectReference: {fileID: 0}
     - target: {fileID: 8679919340704684898, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_Name
       value: MarkableCube (7)
@@ -5928,6 +6216,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1431636024
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1219917105
+      objectReference: {fileID: 0}
     - target: {fileID: 8679919340704684898, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_Name
       value: MarkableCube (2)
@@ -5989,6 +6285,14 @@ PrefabInstance:
     - target: {fileID: 1420796561209515633, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3493121584
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1219917105
       objectReference: {fileID: 0}
     - target: {fileID: 8679919340704684898, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_Name
@@ -6086,6 +6390,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3288012860
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1219917105
+      objectReference: {fileID: 0}
     - target: {fileID: 8679919340704684898, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_Name
       value: MarkableCube
@@ -6147,6 +6459,14 @@ PrefabInstance:
     - target: {fileID: 1420796561209515633, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1236774692
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1219917105
       objectReference: {fileID: 0}
     - target: {fileID: 8679919340704684898, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_Name
@@ -6210,6 +6530,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 134435450
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1219917105
+      objectReference: {fileID: 0}
     - target: {fileID: 8679919340704684898, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_Name
       value: MarkableCube
@@ -6272,6 +6600,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3687151087
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1219917105
+      objectReference: {fileID: 0}
     - target: {fileID: 8679919340704684898, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_Name
       value: Cube1
@@ -6333,6 +6669,14 @@ PrefabInstance:
     - target: {fileID: 1420796561209515633, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2799674484
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1219917105
       objectReference: {fileID: 0}
     - target: {fileID: 8679919340704684898, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_Name
@@ -6429,6 +6773,14 @@ PrefabInstance:
     - target: {fileID: 1420796561209515633, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2113478265
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1219917105
       objectReference: {fileID: 0}
     - target: {fileID: 8679919340704684898, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_Name
@@ -6892,6 +7244,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2131631702
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1219917105
+      objectReference: {fileID: 0}
     - target: {fileID: 8679919340704684898, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_Name
       value: MarkableCube (1)
@@ -6953,6 +7313,14 @@ PrefabInstance:
     - target: {fileID: 1420796561209515633, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3475089844
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1219917105
       objectReference: {fileID: 0}
     - target: {fileID: 8679919340704684898, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_Name
@@ -7084,6 +7452,14 @@ PrefabInstance:
     - target: {fileID: 1420796561209515633, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 894761162
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1219917105
       objectReference: {fileID: 0}
     - target: {fileID: 8679919340704684898, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_Name
@@ -7268,6 +7644,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 803098716
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1219917105
+      objectReference: {fileID: 0}
     - target: {fileID: 8679919340704684898, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_Name
       value: MarkableCube
@@ -7329,6 +7713,14 @@ PrefabInstance:
     - target: {fileID: 1420796561209515633, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1206096483
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1219917105
       objectReference: {fileID: 0}
     - target: {fileID: 8679919340704684898, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_Name
@@ -7568,6 +7960,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 682830291
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1219917105
+      objectReference: {fileID: 0}
     - target: {fileID: 8679919340704684898, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_Name
       value: MarkableCube (10)
@@ -7741,6 +8141,14 @@ PrefabInstance:
     - target: {fileID: 1420796561209515633, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4120599828
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1219917105
       objectReference: {fileID: 0}
     - target: {fileID: 8679919340704684898, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_Name
@@ -7972,6 +8380,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1688387762
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1219917105
+      objectReference: {fileID: 0}
     - target: {fileID: 8679919340704684898, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_Name
       value: MarkableCube (10)
@@ -8067,6 +8483,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2318069353
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1219917105
+      objectReference: {fileID: 0}
     - target: {fileID: 8679919340704684898, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_Name
       value: MarkableCube
@@ -8128,6 +8552,14 @@ PrefabInstance:
     - target: {fileID: 1420796561209515633, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2302680181
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1219917105
       objectReference: {fileID: 0}
     - target: {fileID: 8679919340704684898, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_Name
@@ -8191,6 +8623,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 675279070
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1219917105
+      objectReference: {fileID: 0}
     - target: {fileID: 8679919340704684898, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_Name
       value: MarkableCube (2)
@@ -8252,6 +8692,14 @@ PrefabInstance:
     - target: {fileID: 1420796561209515633, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2815020478
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1219917105
       objectReference: {fileID: 0}
     - target: {fileID: 8679919340704684898, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_Name
@@ -8450,6 +8898,14 @@ PrefabInstance:
     - target: {fileID: 1420796561209515633, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3472573414
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1219917105
       objectReference: {fileID: 0}
     - target: {fileID: 8679919340704684898, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_Name
@@ -9103,6 +9559,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 457537040
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1219917105
+      objectReference: {fileID: 0}
     - target: {fileID: 8679919340704684898, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_Name
       value: MarkableCube (2)
@@ -9233,6 +9697,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2755011488
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1219917105
+      objectReference: {fileID: 0}
     - target: {fileID: 8679919340704684898, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_Name
       value: MarkableCube (6)
@@ -9327,6 +9799,14 @@ PrefabInstance:
     - target: {fileID: 1420796561209515633, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3706050623
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082064077600058839, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1219917105
       objectReference: {fileID: 0}
     - target: {fileID: 8679919340704684898, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
       propertyPath: m_Name

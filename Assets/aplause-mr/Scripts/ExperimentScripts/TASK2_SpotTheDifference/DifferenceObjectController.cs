@@ -307,8 +307,7 @@ public class DifferenceObjectController : MonoBehaviour
         }
     }
 
-    [Rpc(SendTo.Server)]
-    public void CheckIfTaskIsCompleteRpc(int _cubeId, int _playerId, bool _state)
+    public void CheckIfTaskIsComplete (int _cubeId, int _playerId, bool _state)
     {
         // set bit corresponding to updated cube to new value
         if (0 == _playerId)

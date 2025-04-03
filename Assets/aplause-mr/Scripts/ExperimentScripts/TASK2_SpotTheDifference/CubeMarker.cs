@@ -78,40 +78,32 @@ public class CubeMarker : NetworkBehaviour
     {
         cubeId = _cubeId;
         playerId = _playerId;
-        UpdateMarkerStateRpc(false);
+        UpdateMarkerStateRpc(false, false);
     }
 
-
-
-    private void OnTriggerEnter(Collider other)
+    public void IntersectionDetected()
     {
-
-
         float timeSinceAcceptedTrigger = Time.time - timeOfLastTrigger;
         if (timeSinceAcceptedTrigger < 0.2f)
         {
             return;
         }
 
-        // since all users have colliders on their hands which could trigger thuis function, 
-        // only let the server trigger it
-        if (IsServer)
-        {
-            UpdateMarkerStateRpc(!isMarked.Value);
-
-            // prompt difference object controller to check if task is complete
-            diffObjectsController.CheckIfTaskIsCompleteRpc(cubeId, playerId, isMarked.Value);
-        }
-
+        UpdateMarkerStateRpc(!isMarked.Value, true);
 
         timeOfLastTrigger = Time.time;
     }
 
 
     [Rpc(SendTo.Server)]
-    public void UpdateMarkerStateRpc(bool newState)
+    public void UpdateMarkerStateRpc(bool newState, bool needToCheckTaskCompletion)
     {
         isMarked.Value = newState;
+
+        if (needToCheckTaskCompletion)
+        {
+            diffObjectsController.CheckIfTaskIsComplete(cubeId, playerId, isMarked.Value);
+        }
     }
 
     public static string GetPath(Transform current)
