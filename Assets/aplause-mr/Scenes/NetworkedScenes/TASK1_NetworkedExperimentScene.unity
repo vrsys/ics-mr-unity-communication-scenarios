@@ -3066,8 +3066,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.05, z: 0}
-  m_LocalScale: {x: 0.85, y: 0.01, z: 0.6}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.848, y: 0.01, z: 0.6}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1290456237}
   m_Father: {fileID: 614888308}
@@ -3355,6 +3355,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instructionsDisplay: {fileID: 881109824}
   floorPlanDisplayGameObject: {fileID: 1290456233}
+  showSurroundingEnvironments: 0
+  numberOfAssignableRooms: 4
 --- !u!1 &1463319473
 GameObject:
   m_ObjectHideFlags: 0
@@ -5398,7 +5400,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3130830557821445414, guid: 0f874d7acb686f644b6043ba39bba74f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 16.999939
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 3130830557849588012, guid: 0f874d7acb686f644b6043ba39bba74f, type: 3}
       propertyPath: m_AnchorMax.x

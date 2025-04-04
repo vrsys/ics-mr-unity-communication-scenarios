@@ -12,14 +12,8 @@ public class TASK1_SceneController : APMR_SceneController
     [SerializeField]
     private bool showSurroundingEnvironments = false;
 
-    enum NumberOfAssignableRooms
-    {
-        FourRooms,
-        FiveRooms
-    };
-
-    [SerializeField]
-    private NumberOfAssignableRooms numberOfAssignableRooms = NumberOfAssignableRooms.FourRooms;
+    [SerializeField, Range(4, 5)]
+    private int numberOfAssignableRooms = 4;
 
     protected override void Start()
     {
@@ -31,13 +25,11 @@ public class TASK1_SceneController : APMR_SceneController
     {
         base.PrepareScene(trialIndex, condition);
 
-        string numRoomsString = (NumberOfAssignableRooms.FourRooms == numberOfAssignableRooms ? "4" : "5") + "bed";
-        string showEnvironmentString = (showSurroundingEnvironments ? "env" : "");
+        string numRoomsString = numberOfAssignableRooms.ToString();
+        string showEnvironmentString = (showSurroundingEnvironments ? "_env" : "");
         string floorPlanToLoadString = (trialIndex + 1).ToString();
 
-        // TODO switch when new floor plans are available
-        string floorPlanResourcePath = "TASK1/FloorPlanMaterials/plan" + floorPlanToLoadString + "_s3";
-        //string floorPlanResourcePath = "TASK1/FloorPlanMaterials/plan" + floorPlanToLoadString + "_" + numRoomsString + "_" + showEnvironmentString;
+        string floorPlanResourcePath = "TASK1/FloorPlanMaterials/" + numRoomsString + "Rooms/plan" + floorPlanToLoadString + "_" + numRoomsString + "bed" + showEnvironmentString;
 
         Material loadedFloorPlanMaterial = (Material)Resources.Load(floorPlanResourcePath, typeof(Material));
         if (loadedFloorPlanMaterial == null)
