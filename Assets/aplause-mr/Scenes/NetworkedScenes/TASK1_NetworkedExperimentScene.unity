@@ -3355,8 +3355,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instructionsDisplay: {fileID: 881109824}
   floorPlanDisplayGameObject: {fileID: 1290456233}
-  showSurroundingEnvironments: 0
-  numberOfAssignableRooms: 4
+  showSurroundingEnvironments: 1
+  numberOfAssignableRooms: 5
 --- !u!1 &1463319473
 GameObject:
   m_ObjectHideFlags: 0

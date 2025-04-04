@@ -29,7 +29,7 @@ public class TASK1_SceneController : APMR_SceneController
         string showEnvironmentString = (showSurroundingEnvironments ? "_env" : "");
         string floorPlanToLoadString = (trialIndex + 1).ToString();
 
-        string floorPlanResourcePath = "TASK1/FloorPlanMaterials/" + numRoomsString + "Rooms/plan" + floorPlanToLoadString + "_" + numRoomsString + "bed" + showEnvironmentString;
+        string floorPlanResourcePath = "TASK1/FloorPlanMaterials/" + numRoomsString + "Rooms/plan" + floorPlanToLoadString + "_" + numRoomsString + "room" + showEnvironmentString;
 
         Material loadedFloorPlanMaterial = (Material)Resources.Load(floorPlanResourcePath, typeof(Material));
         if (loadedFloorPlanMaterial == null)
