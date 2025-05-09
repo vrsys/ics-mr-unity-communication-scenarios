@@ -7,6 +7,7 @@ using System.Linq;
 using Unity.Netcode;
 using Unity.Netcode.Components;
 using UnityEngine;
+using VRSYS.Core.Interaction;
 
 public class SurvivalItemController : NetworkBehaviour
 {
@@ -17,8 +18,6 @@ public class SurvivalItemController : NetworkBehaviour
     private float threeLinesGroupSpan = 1.5f;
     [SerializeField]
     private GameObject survivalItemPrefab;
-    [SerializeField]
-    private string taskDataResourceDirectory = "TASK3";
 
     [SerializeField]
     private string unityResourceDirectory = "TASK3";
@@ -51,31 +50,23 @@ public class SurvivalItemController : NetworkBehaviour
     [SerializeField]
     private ItemLayout itemLayout = ItemLayout.CIRCLE;
 
-    public enum SurvivalScenario
-    {
-        DESERT,
-        SEA,
-        WINTER,
-        MOUNTAINS,
-        MOON
-    }
-
-    [SerializeField]
-    private List<SurvivalScenario> survivalScenarioOrder = new List<SurvivalScenario> { SurvivalScenario.MOUNTAINS, SurvivalScenario.MOON, SurvivalScenario.WINTER, SurvivalScenario.DESERT, SurvivalScenario.SEA};
-
-    private void Start()
-    {
-        // TODO remove for networked version
-        //InstantiateSurvivalItemsIfMaster();
-
-    }
 
     public void CreateObjects()
     {
-        if (NetworkManager.Singleton.IsServer)
+        // networked mode
+        if (NetworkManager.Singleton)
+        {
+            if (NetworkManager.Singleton.IsServer)
+            {
+                InstantiateSurvivalItemsIfMaster();
+            }
+        }
+        // non networked mode
+        else
         {
             InstantiateSurvivalItemsIfMaster();
         }
+
     }
 
     private void InstantiateSurvivalItemsIfMaster()
@@ -85,9 +76,12 @@ public class SurvivalItemController : NetworkBehaviour
         {
             GameObject newGameObject = Instantiate(survivalItemPrefab);
 
-            var instanceNetworkObject = newGameObject.GetComponent<NetworkObject>();
-            instanceNetworkObject.Spawn();
-
+            // spawn networked object if in networked mode
+            if (NetworkManager.Singleton)
+            {
+                var instanceNetworkObject = newGameObject.GetComponent<NetworkObject>();
+                instanceNetworkObject.Spawn();
+            }
 
 
             newGameObject.name = survivalItemPrefab.name + i.ToString("000");
@@ -97,28 +91,6 @@ public class SurvivalItemController : NetworkBehaviour
         }
 
     }
-    /*
-
-
-    public void InitialiseSurvivalItemsIfClient()
-    {
-        if (!PhotonNetwork.IsMasterClient)
-        {
-            for (int i = 0; i < numSurvivalItems; i++)
-            {
-                GameObject itemGameObject = GameObject.Find(survivalItemPrefab.name + "(Clone)");
-                if (itemGameObject != null)
-                {
-                    itemGameObject.name = survivalItemPrefab.name + itemGameObject.GetComponent<PhotonView>().ViewID;
-                    itemGameObject.transform.SetParent(transform, false);
-                    //itemGameObject.transform.localPosition = Vector3.zero;
-                }
-            }
-
-            InitialiseReferences();
-        }
-    }
-    */
 
     private void InitialiseReferences()
     {
@@ -128,20 +100,22 @@ public class SurvivalItemController : NetworkBehaviour
         {
             itemGameObjects.Add(child.gameObject);
         }
-        // order by network object id to make sure that all clients have the same order
-        itemGameObjects = itemGameObjects.OrderBy(itemGameObj => itemGameObj.GetComponent<NetworkObject>().NetworkObjectId ).ToList();
+
+        if (NetworkManager.Singleton)
+        {
+            // order by network object id to make sure that all clients have the same order
+            itemGameObjects = itemGameObjects.OrderBy(itemGameObj => itemGameObj.GetComponent<NetworkObject>().NetworkObjectId ).ToList();
+        }
     }
 
-    public void ShowBoxesForSurvivalScenario(int scenarioIndex, int maxItemsToShow)
+    public void ShowBoxesForSurvivalScenario(string csvPath, int maxItemsToShow)
     {
         if (0 == itemGameObjects.Count)
         {
             InitialiseReferences();
         }
 
-        SurvivalScenario survivalScenario = survivalScenarioOrder[scenarioIndex];
-        string csvPath = taskDataResourceDirectory + "/SurvivalItemData/" + survivalScenario.ToString() + "_survival_items";
-
+        
         LoadItemsFromCSV(csvPath);
 
         items = items.Take(maxItemsToShow).ToList();
@@ -203,25 +177,31 @@ public class SurvivalItemController : NetworkBehaviour
 
     private void PositionItems()
     {
-        foreach (GameObject obj in itemGameObjects)
+
+        // in networked mode...
+        if (NetworkManager.Singleton)
         {
-            obj.GetComponent<NetworkRigidbody>().AutoUpdateKinematicState = true;
-        }
-
-        if (!NetworkManager.Singleton.IsServer)
-        {
-
-            return;
-        }
-
-        foreach (GameObject obj in itemGameObjects)
-        {
-
-            if (!obj.GetComponent<NetworkBehaviour>().IsOwner)
+            foreach (GameObject obj in itemGameObjects)
             {
-                obj.GetComponent<NetworkObject>().ChangeOwnership(NetworkManager.Singleton.LocalClientId);
+                obj.GetComponent<NetworkRigidbody>().AutoUpdateKinematicState = true;
+            }
+
+
+            if (!NetworkManager.Singleton.IsServer)
+            {
+                return;
+            }
+
+            foreach (GameObject obj in itemGameObjects)
+            {
+
+                if (!obj.GetComponent<NetworkBehaviour>().IsOwner)
+                {
+                    obj.GetComponent<NetworkObject>().ChangeOwnership(NetworkManager.Singleton.LocalClientId);
+                }
             }
         }
+
 
         if (ItemLayout.CIRCLE == itemLayout)
         {
@@ -298,19 +278,26 @@ public class SurvivalItemController : NetworkBehaviour
             InitialiseReferences();
         }
 
-        if (!NetworkManager.Singleton.IsServer)
+        // in networked mode
+        if (NetworkManager.Singleton)
         {
-            return;
+            if (!NetworkManager.Singleton.IsServer)
+            {
+                return;
+            }
+
+            foreach (GameObject obj in itemGameObjects)
+            {
+                if (!obj.GetComponent<NetworkBehaviour>().IsOwner)
+                {
+                    obj.GetComponent<NetworkObject>().ChangeOwnership(NetworkManager.Singleton.LocalClientId);
+                }
+            }
+
         }
 
         foreach (GameObject obj in itemGameObjects)
         {
-
-            if (!obj.GetComponent<NetworkBehaviour>().IsOwner)
-            {
-                obj.GetComponent<NetworkObject>().ChangeOwnership(NetworkManager.Singleton.LocalClientId);
-            }
-
             obj.GetComponent<Rigidbody>().isKinematic = true;
             obj.transform.position = new Vector3(0, -1, 0);
         }

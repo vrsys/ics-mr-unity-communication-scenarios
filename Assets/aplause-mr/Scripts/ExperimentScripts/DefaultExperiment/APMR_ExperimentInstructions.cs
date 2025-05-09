@@ -7,13 +7,6 @@ public class APMR_ExperimentInstructions : MonoBehaviour
     {
 
     }
-    /*
-
-    public abstract void PrepareTrainingPhase();
-    public abstract void PrepareTrial(int trialIndex);
-    public abstract void ClearTask();
-    */
-
     public virtual List<string> GetPreTrialText(int trialIndex)
     {
         return new List<string>{"Trial " + (trialIndex + 1) + " about to start."};

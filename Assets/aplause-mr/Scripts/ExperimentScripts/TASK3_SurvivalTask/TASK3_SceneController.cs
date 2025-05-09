@@ -1,5 +1,7 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using static TASK3_SceneController;
 
 public class TASK3_SceneController : APMR_SceneController
 {
@@ -13,9 +15,30 @@ public class TASK3_SceneController : APMR_SceneController
     [SerializeField]
     private int numItemsToShow = 12;
 
+    [SerializeField]
+    private APMR_InstructionsDisplay survivalDescriptionDisplay = null;
+
+    [SerializeField]
+    private string taskDataResourceDirectory = "TASK3";
+
+    public enum SurvivalScenario
+    {
+        DESERT,
+        SEA,
+        WINTER,
+        MOUNTAINS,
+        MOON
+    }
+
+    [SerializeField]
+    private List<SurvivalScenario> survivalScenarioOrder = new List<SurvivalScenario> { SurvivalScenario.MOUNTAINS, SurvivalScenario.MOON, SurvivalScenario.WINTER, SurvivalScenario.DESERT, SurvivalScenario.SEA };
+
+
+
     public override void StartExperiment()
     {
         survivalItemController.CreateObjects();
+        survivalDescriptionDisplay.HideInstructions();  
     }
 
 
@@ -25,12 +48,22 @@ public class TASK3_SceneController : APMR_SceneController
 
         int itemsToShow = trialIndex < 0 ? numItemsForTrainingScenario : numItemsToShow;
 
-        survivalItemController.ShowBoxesForSurvivalScenario(trialIndex + 1, itemsToShow);
+        SurvivalScenario survivalScenario = survivalScenarioOrder[trialIndex + 1];
 
-        // choose whether to show stacked set of boxes or spread set
-        //bool showstackedBoxes = (trialIndex % 2 == 0);
+        string survivalItemsCsvPath = taskDataResourceDirectory + "/SurvivalItemData/" + survivalScenario.ToString() + "_survival_items";
+        survivalItemController.ShowBoxesForSurvivalScenario(survivalItemsCsvPath, itemsToShow);
 
-        //differenceObjectController.InitializeBoxesAndShapesForTrial(trialIndex, showstackedBoxes);
+
+        // load the description text for the scenario
+        string scenarioDescriptionTextPath = taskDataResourceDirectory + "/Scenarios/" + survivalScenario.ToString().ToLower();
+        TextAsset scenarioDescriptionText = Resources.Load<TextAsset>(scenarioDescriptionTextPath);
+
+        if (null == scenarioDescriptionText)
+        {
+            Debug.LogError("Survival description not found at " + scenarioDescriptionTextPath);
+        }
+        survivalDescriptionDisplay.ShowInstructions(scenarioDescriptionText.text);
+
     }
 
     public override void ClearScene()
@@ -38,6 +71,8 @@ public class TASK3_SceneController : APMR_SceneController
         base.ClearScene();
 
         survivalItemController.HideItems();
+        survivalDescriptionDisplay.HideInstructions();
+
     }
 
 }
