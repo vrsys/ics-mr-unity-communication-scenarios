@@ -20,6 +20,9 @@ public class SurvivalItemController : NetworkBehaviour
     [SerializeField]
     private string taskDataResourceDirectory = "TASK3";
 
+    [SerializeField]
+    private string unityResourceDirectory = "TASK3";
+
     private int maxNumSurvivalItems = 15;
 
 
@@ -180,7 +183,7 @@ public class SurvivalItemController : NetworkBehaviour
 
     private void ApplyItemLabelsAndImages()
     {
-        string materialDirectory = taskDataResourceDirectory + "/Materials/SurvivalItemImageMaterials/";
+        string materialDirectory = unityResourceDirectory + "/Materials/SurvivalItemImageMaterials/";
 
         for (int i = 0; i < items.Count; i++)
         {

@@ -2137,7 +2137,8 @@ MonoBehaviour:
   distFromCentre: 0.7
   threeLinesGroupSpan: 1
   survivalItemPrefab: {fileID: 8293210388495112964, guid: c909075828b07d04e8bf0748ab1c7147, type: 3}
-  taskDataResourceDirectory: TASK3
+  taskDataResourceDirectory: aplause-mr-task-materials/TASK3
+  unityResourceDirectory: TASK3
   itemLayout: 2
   survivalScenarioOrder: 0300000004000000020000000000000001000000
 --- !u!4 &888595018
@@ -5222,7 +5223,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3130830557821445414, guid: 0f874d7acb686f644b6043ba39bba74f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 16.999939
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 3130830557849588012, guid: 0f874d7acb686f644b6043ba39bba74f, type: 3}
       propertyPath: m_AnchorMax.x

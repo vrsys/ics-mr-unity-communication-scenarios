@@ -59,7 +59,9 @@ public class DifferenceObjectController : MonoBehaviour
     private GameObject activeBoxesRoot1;
 
     [SerializeField]
-    private string resourceDirectory;
+    private string unityResourceDirectory;
+    [SerializeField]
+    private string dataResourceDirectory;
 
     // Start is called before the first frame update
     void Start()
@@ -181,7 +183,7 @@ public class DifferenceObjectController : MonoBehaviour
     private GameObject AttachShapeToBox(string color, string shape, GameObject boxObject)
     {
         // instantiate prefab for shape
-        string prefabPath = resourceDirectory + "/Prefabs/Shapes/" + shape;
+        string prefabPath = unityResourceDirectory + "/Prefabs/Shapes/" + shape;
         GameObject prefabToInstantiate = Resources.Load<GameObject>(prefabPath);
         if (prefabToInstantiate == null)
         {
@@ -190,7 +192,7 @@ public class DifferenceObjectController : MonoBehaviour
         GameObject shapeObject = Instantiate(prefabToInstantiate);
 
         // apply material
-        string materialPath = resourceDirectory + "/Materials/" + color.ToLower() + "_mat";
+        string materialPath = unityResourceDirectory + "/Materials/" + color.ToLower() + "_mat";
         Material material = Resources.Load<Material>(materialPath);
         if (material == null)
         {
@@ -217,11 +219,11 @@ public class DifferenceObjectController : MonoBehaviour
         string csvPath;
         if (activeTrial < 0)
         {
-            csvPath = resourceDirectory + "/ShapeLists/shape_lists_training";
+            csvPath = dataResourceDirectory + "/ShapeLists/shape_lists_training";
         }
         else
         {
-            csvPath = resourceDirectory + "/ShapeLists/shape_lists_" + activeTrial;
+            csvPath = dataResourceDirectory + "/ShapeLists/shape_lists_" + activeTrial;
         }
         TextAsset csvFile = Resources.Load<TextAsset>(csvPath);
         if (csvFile == null)

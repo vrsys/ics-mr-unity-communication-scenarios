@@ -707,6 +707,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1827387163}
+  - component: {fileID: 1827387165}
   - component: {fileID: 1827387164}
   m_Layer: 0
   m_Name: SurvivalItems
@@ -742,12 +743,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c613b43c3c53884c8f0fee6c607e870, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   distFromCentre: 0.7
   threeLinesGroupSpan: 1
   survivalItemPrefab: {fileID: 8293210388495112964, guid: c909075828b07d04e8bf0748ab1c7147, type: 3}
-  taskDataResourceDirectory: TASK3
+  taskDataResourceDirectory: aplause-mr-task-materials/TASK3
+  unityResourceDirectory: TASK3
   itemLayout: 2
   survivalScenarioOrder: 0300000004000000020000000000000001000000
+--- !u!114 &1827387165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1827387162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 1091844416
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  DeferredDespawnTick: 0
+  Ownership: 1
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
+  SyncOwnerTransformWhenParented: 1
+  AllowOwnerToParent: 0
 --- !u!1 &1828921558
 GameObject:
   m_ObjectHideFlags: 0

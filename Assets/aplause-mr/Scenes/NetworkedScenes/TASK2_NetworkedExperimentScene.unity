@@ -3224,7 +3224,8 @@ MonoBehaviour:
   boxSetStackedRoot1: {fileID: 1607471224}
   boxSetTrainingRoot0: {fileID: 1147369927}
   boxSetTrainingRoot1: {fileID: 964848995}
-  resourceDirectory: TASK2
+  unityResourceDirectory: TASK2
+  dataResourceDirectory: aplause-mr-task-materials/TASK2
 --- !u!4 &704989429
 Transform:
   m_ObjectHideFlags: 0
@@ -10541,7 +10542,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3130830557821445414, guid: 0f874d7acb686f644b6043ba39bba74f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 17
+      value: 16.999939
       objectReference: {fileID: 0}
     - target: {fileID: 3130830557849588012, guid: 0f874d7acb686f644b6043ba39bba74f, type: 3}
       propertyPath: m_AnchorMax.x
