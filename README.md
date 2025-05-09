@@ -1,5 +1,26 @@
 # aplause-mr-communication-tasks
 
+This repository contains Unity implementations of the communication tasks described in the [ICS-MR](TODO add link) dataset.    
+
+## Installation
+
+The Unity implementations depend on the task data that is contained in a [separate repository](https://github.com/vrsys/aplause-mr-communication-task-materials).
+
+1. **Clone Repository.** The task data is included as a git submodule, so this repository should be cloned as follows to simultaneously clone the task data repository:
+
+```
+git clone --recurse-submodules https://github.com/vrsys/aplause-mr-communication-tasks.git
+```
+
+2. **Open the Unity project.** 
+
+3. **Create Unity Materials.** To create materials from images that are contained in the task data repository, execute the Material creation script by selecting `Tools > Create Materials From Textures` and clicking `Generate Materials`.
+
+The repository should now be ready to use.
+
+
+## Tasks
+
 This repository contains Unity implementations corresponding to the following conversation tasks:
 
 1. Floor Plan Negotiation
