@@ -1,7 +1,7 @@
 
 # aplause-mr-communication-tasks
 
-This repository contains Unity implementations of the communication tasks described in the [ICS-MR](TODO add link to paper) dataset.    
+This repository contains Unity implementations of the communication tasks contained in the ICS-MR (Interactive Conversation Scenarios for Assessment of Mixed Reality Communication) dataset.    
 
 ## Installation
 
