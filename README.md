@@ -24,7 +24,7 @@ The repository should now be ready to use.
 This repository contains Unity implementations corresponding to the following conversation tasks:
 
 1. Floor Plan Negotiation Task (TASK1)
-2. Spot-the-Difference Task (TASK2)
+2. Spot the Difference Task (TASK2)
 3. Survival Task (TASK3)
 
 Please the associated paper (link above) for full descriptions of the tasks.
