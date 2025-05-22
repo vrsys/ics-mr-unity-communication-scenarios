@@ -9,7 +9,7 @@ The Unity implementations depend on the task data that is contained in a [separa
 1. **Clone Repository.** The task data is included as a git submodule, so this repository should be cloned as follows to simultaneously clone the task data repository:
 
 ```
-git clone --recurse-submodules https://github.com/vrsys/aplause-mr-communication-tasks.git
+git clone --recurse-submodules https://github.com/vrsys/ics-mr-unity-communication-scenarios.git
 ```
 
 2. **Open the Unity project.** 
