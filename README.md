@@ -4,7 +4,7 @@ This repository contains Unity implementations of the communication tasks contai
 
 ## Installation
 
-The Unity implementations depend on the task data that is contained in a [separate repository](https://github.com/vrsys/ics-mr-communication-scenario-materials).
+The Unity implementations depend on the task data that is contained in a [separate repository](https://github.com/vrsys/ics-mr-unity-communication-scenarios).
 
 1. **Clone Repository.** The task data is included as a git submodule, so this repository should be cloned as follows to simultaneously clone the task data repository:
 
