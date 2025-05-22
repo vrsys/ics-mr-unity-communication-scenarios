@@ -399,6 +399,7 @@ GameObject:
   - component: {fileID: 455699499}
   - component: {fileID: 455699498}
   - component: {fileID: 455699501}
+  - component: {fileID: 455699502}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -524,6 +525,57 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!114 &455699502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 455699497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b3f161e6a164b34da7a3c7ed6008993, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 455699500}
+  moveAction:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Move
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 612175e1-943b-461c-8294-889dc16cb703
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 4584091051045144211, guid: 266f96d8e11535e43a65a15b16b41116, type: 3}
+  yawAction:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Yaw
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: d4a07c1c-2cca-4385-92c2-91614309fd64
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: -8230567439551518880, guid: 266f96d8e11535e43a65a15b16b41116, type: 3}
+  pitchAction:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Pitch
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: c0f045a1-2983-4b02-9b27-8f1b6ccbfbb0
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 15680138719376272, guid: 266f96d8e11535e43a65a15b16b41116, type: 3}
+  translationVelocity: 3
+  rotationVelocity: 5
 --- !u!1 &611224557
 GameObject:
   m_ObjectHideFlags: 0
