@@ -1235,7 +1235,7 @@ MonoBehaviour:
   numItemsForTrainingScenario: 12
   numItemsToShow: 12
   survivalDescriptionDisplay: {fileID: 407421522}
-  taskDataResourceDirectory: aplause-mr-task-materials/S3_SurvivalGame
+  taskDataResourceDirectory: ics-mr-communication-scenario-materials/S3_SurvivalGame
   survivalScenarioOrder: 0300000004000000020000000000000001000000
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

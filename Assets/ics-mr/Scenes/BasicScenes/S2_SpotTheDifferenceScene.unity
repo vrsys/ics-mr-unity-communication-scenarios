@@ -1028,7 +1028,7 @@ MonoBehaviour:
   boxSetTrainingRoot0: {fileID: 531683425}
   boxSetTrainingRoot1: {fileID: 2068418080}
   unityResourceDirectory: S2_SpotTheDifference
-  dataResourceDirectory: aplause-mr-task-materials/S2_SpotTheDifference
+  dataResourceDirectory: ics-mr-communication-scenario-materials/S2_SpotTheDifference
 --- !u!1001 &421367436
 PrefabInstance:
   m_ObjectHideFlags: 0
