@@ -55,3 +55,9 @@ Please note that in order to run the project using Unity Netcode, the Unity proj
 
 **User Type/Role**: In Auto Start mode, a user type will automatically be selected, e.g. as Desktop user or HMD user. The default role can be set in the Network User Spawn Info settings (accessed either at path `Assets/VRSYS/Core/ScriptableObjects/Instances/Network User Spawn Info` or in the scenes in `__NETWORKING__/VRSYS-Networking > Connection Manager component > User Spawn Info`). If you prefer to select the user type dynamically when starting the scene, disable Auto Start mode (see above).
 
+
+## Running Experiments
+
+**Experiment Data:** The `__CONTROL__/ExperimentRunner` Game Object, found in all experiment scenes, contains an `*Experiment Runner` component that allows experiments to be configured. For example, the interlocutor (participant) ID and group ID can be set, the output data directory can be specified, and the order of conditions (e.g. combinations of indpendent variables) can be edited.
+
+**Experiment Control:** After a scene has started running, the experiment can be started by pressing the Enter key. Subsequently, the experiment can be advanced using the Space key. Note that in networked mode, starting and advancing the experiment on one PC causes the experiment to start/advance for all participants. 
