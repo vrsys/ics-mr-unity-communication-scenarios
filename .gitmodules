@@ -1,0 +1,3 @@
+[submodule "Assets/ics-mr/Resources/ics-mr-communication-scenario-materials"]
+	path = Assets/ics-mr/Resources/ics-mr-communication-scenario-materials
+	url = https://github.com/vrsys/ics-mr-communication-scenario-materials
