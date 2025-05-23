@@ -4,9 +4,9 @@ This repository contains Unity implementations of the communication tasks contai
 
 ## Installation
 
-The Unity implementations depend on the task data that is contained in a [separate repository](https://github.com/vrsys/ics-mr-communication-scenario-materials).
+The Unity implementations depend on the scenario materials that are contained in a [separate repository](https://github.com/vrsys/ics-mr-communication-scenario-materials).
 
-1. **Clone Repository.** The task data is included as a git submodule, so this repository should be cloned as follows to simultaneously clone the task data repository:
+1. **Clone Repository.** The scenario materials are included as a git submodule, so this repository should be cloned as follows to simultaneously clone the scenario material repository:
 
 ```
 git clone --recurse-submodules https://github.com/vrsys/ics-mr-unity-communication-scenarios.git
@@ -14,18 +14,18 @@ git clone --recurse-submodules https://github.com/vrsys/ics-mr-unity-communicati
 
 2. **Open the Unity project.** 
 
-3. **Create Unity Materials.** To create materials from images that are contained in the task data repository, execute the Material creation script by selecting `Tools > Create Materials From Textures` and clicking `Generate Materials`.
+3. **Create Unity Materials.** To create Unity _Material_ files from images that are contained in the scenario materials repository, execute the Material creation script by selecting `Tools > Create Materials From Textures` and clicking `Generate Materials`.
 
 The repository should now be ready to use.
 
 
-## Tasks
+## Scenarios
 
-This repository contains Unity implementations corresponding to the following conversation tasks:
+This repository contains Unity implementations corresponding to the following conversation scenarios:
 
-1. Floor Plan Negotiation Task (TASK1)
-2. Spot the Difference Task (TASK2)
-3. Survival Task (TASK3)
+1. Floor Plan Negotiation (S1)
+2. Spot the Difference (S2)
+3. Survival Game (S3)
 
 Please the associated paper (link above) for full descriptions of the tasks.
 
@@ -34,7 +34,7 @@ Please the associated paper (link above) for full descriptions of the tasks.
 
 ## Scene Types
 
-The repository includes two sets of scenes (in `Assets/aplause-mr/Resources/Scenes`):
+The repository includes two sets of scenes (in `Assets/ics-mr/Resources/Scenes`):
 
 * **Basic** Scenes: these scenes show the different scene states or scenarios available for each task, and allow the user to advance through the experiment, but do not include any interactivity. They can serve as building blocks, if you wish to use the tasks in your own distribution system.
 
