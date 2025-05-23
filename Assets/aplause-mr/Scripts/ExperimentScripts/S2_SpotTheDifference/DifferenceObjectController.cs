@@ -33,7 +33,7 @@ public class DifferenceObjectController : MonoBehaviour
 
     //private bool taskComplete = false;
 
-    private APMR_ExperimentRunner experimentRunner;
+    private ICSMR_ExperimentRunner experimentRunner;
 
     public class ShapeInfo
     {
@@ -66,7 +66,7 @@ public class DifferenceObjectController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        experimentRunner = FindAnyObjectByType<APMR_ExperimentRunner>();
+        experimentRunner = FindAnyObjectByType<ICSMR_ExperimentRunner>();
     }
 
 

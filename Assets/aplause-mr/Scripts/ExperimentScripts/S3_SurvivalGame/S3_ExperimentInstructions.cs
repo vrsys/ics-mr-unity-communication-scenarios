@@ -1,7 +1,10 @@
 using System.Collections.Generic;
+using UnityEngine;
 
-public class TASK4_ExperimentInstructions : APMR_ExperimentInstructions
+public class S3_ExperimentInstructions : ICSMR_ExperimentInstructions
 {
+
+
     public override List<string> GetPreTrainingText()
     {
         List<string> instructionList = base.GetPreTrainingText();
@@ -24,4 +27,5 @@ public class TASK4_ExperimentInstructions : APMR_ExperimentInstructions
     {
         return null;
     }
+
 }

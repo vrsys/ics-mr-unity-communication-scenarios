@@ -1,14 +1,14 @@
 using System.Collections;
 using UnityEngine;
 
-public class APMR_SceneController : MonoBehaviour
+public class ICSMR_SceneController : MonoBehaviour
 {
 
 
     [Header("Scene References")]
     
     [SerializeField]
-    private APMR_InstructionsDisplay instructionsDisplay = null;
+    private ICSMR_InstructionsDisplay instructionsDisplay = null;
 
     private AudioSource audioSource = null;
 
@@ -23,7 +23,7 @@ public class APMR_SceneController : MonoBehaviour
 
     }
 
-    public virtual void PrepareScene(int trialIndex, APMR_ExperimentRunner.Condition condition)
+    public virtual void PrepareScene(int trialIndex, ICSMR_ExperimentRunner.Condition condition)
     {
         Debug.Log("Prepare scene for trial with condition " + condition);
 
@@ -66,18 +66,6 @@ public class APMR_SceneController : MonoBehaviour
         int invisibleLayer = 3;
         int layer = shouldBeVisible ? visibleLayer : invisibleLayer;
 
-
- 
-        // TODO how to locate avatar root GOs?
-        /*
-        foreach (Transform child in trackingAreaTransform)
-        {
-            if (child.name.Contains("[Remote]"))
-            {
-                UtilityFunctions.SetLayerRecursively(child.gameObject, layer);
-            }
-        }
-        */
     }
 
 

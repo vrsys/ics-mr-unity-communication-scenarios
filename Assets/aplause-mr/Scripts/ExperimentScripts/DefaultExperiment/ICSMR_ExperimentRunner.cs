@@ -7,7 +7,7 @@ using UnityEngine;
 using Unity.Netcode;
 using UnityEngine.InputSystem;
 
-public class APMR_ExperimentRunner : NetworkBehaviour
+public class ICSMR_ExperimentRunner : NetworkBehaviour
 {
 
     [Header("Experiment Run Data")]
@@ -72,7 +72,7 @@ public class APMR_ExperimentRunner : NetworkBehaviour
     [Header("Scene References")]
 
 
-    public APMR_SceneController sceneController;
+    public ICSMR_SceneController sceneController;
 
 
 
@@ -88,11 +88,7 @@ public class APMR_ExperimentRunner : NetworkBehaviour
     private float trialDuration = 0.0f;
 
 
-    //public ExperimentSettings experimentSettings;
-
-    //public int numberOfInterlocutorsExpected = 4;
-
-    public APMR_ExperimentInstructions experimentInstructions;
+    public ICSMR_ExperimentInstructions experimentInstructions;
 
     private string advanceHint = "(Press Space to advance)";
 
@@ -106,42 +102,19 @@ public class APMR_ExperimentRunner : NetworkBehaviour
 
     void Initialize() 
     {
-
-        //InitializeStudyVariablesFromExperimentSettings();
-
-        // TODO get interlocutor ID from user prefs
-        //GetInterlocutorIdFromProjectionWallSettings();
-
         var dt = System.DateTime.Now;
         string dateString = dt.ToString("yyyyMMdd_HH_mm");
         studyDataFilePathBase = outputDataDirectory + "/aplausemr_group" + groupId + "_participant" + interlocutorId + "_date" + dateString;
 
         TestStudyDataPath();
 
-        numberOfTrials = System.Enum.GetValues(typeof(Condition)).Length;
+        numberOfTrials = conditionOrder.Count;
 
         sceneController.ClearScene();
         sceneController.DisplayInstructions("Experiment ready.\nPress Enter to start.");
 
     }
 
-    // Reads experiment variables that are stored in JSON experiment settings config file
-    void InitializeStudyVariablesFromExperimentSettings()
-    {
-        // TODO read these from UserPrefs
-
-        //if (!experimentSettings.hasRead)
-        //    experimentSettings.Read();
-
-        //groupId = experimentSettings.config.groupId;
-        //responseDirectory = experimentSettings.config.responseDirectory;
-        //trialsToSkip = experimentSettings.config.trialsToSkip;
-
-        //Debug.Log("Load group: " + groupId);
-        //Debug.Log("Response directory: " + responseDirectory);
-        //Debug.Log("Num trials to skip: " + trialsToSkip);
-
-    }
 
 
     private void TestStudyDataPath()
@@ -212,8 +185,6 @@ public class APMR_ExperimentRunner : NetworkBehaviour
         {
             yield return TrialCoroutine(i);
         }
-
-        //WriteExperimentData();
 
         yield return ShowInstructionsUntilAdvance("The experiment is complete.\n\nThank you for participating.");
         
@@ -313,15 +284,6 @@ public class APMR_ExperimentRunner : NetworkBehaviour
         yield return PostTrial(trialNum);
     }
 
-    void WriteExperimentData()
-    {
-        if (!studyDataCanBeWritten)
-        {
-            Debug.LogWarning("Tried to write data but data could not be written upon initial test");
-            return;
-        }
-    }
-
     void WriteTrialData(int trialNum)
     {
         if (!studyDataCanBeWritten)
@@ -376,7 +338,6 @@ public class APMR_ExperimentRunner : NetworkBehaviour
     public void CheckForAdvanceKeypress()
     {
         if (Keyboard.current.spaceKey.wasPressedThisFrame)
-        //if (Input.GetKeyDown(KeyCode.Space))
         {
             if (runInNetworkedMode)
             {
@@ -393,7 +354,6 @@ public class APMR_ExperimentRunner : NetworkBehaviour
     void Update()
     {
         if (!experimentStarted && Keyboard.current.enterKey.wasPressedThisFrame)
-        //if (!experimentStarted && Input.GetKeyDown(KeyCode.Return))
         {
             if (runInNetworkedMode)
             {

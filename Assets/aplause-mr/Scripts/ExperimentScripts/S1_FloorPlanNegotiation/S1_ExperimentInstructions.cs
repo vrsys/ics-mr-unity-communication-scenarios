@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TASK1_ExperimentInstructions : APMR_ExperimentInstructions
+public class S1_ExperimentInstructions : ICSMR_ExperimentInstructions
 {
 
 

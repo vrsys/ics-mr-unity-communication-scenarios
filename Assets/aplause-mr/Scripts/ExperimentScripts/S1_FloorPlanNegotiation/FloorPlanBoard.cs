@@ -15,11 +15,6 @@ public class FloorPlanBoard : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void LoadFloorPlan(int floorPlanToLoad)
     {

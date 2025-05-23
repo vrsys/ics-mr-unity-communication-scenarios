@@ -1027,8 +1027,8 @@ MonoBehaviour:
   boxSetStackedRoot1: {fileID: 1079249649}
   boxSetTrainingRoot0: {fileID: 531683425}
   boxSetTrainingRoot1: {fileID: 2068418080}
-  unityResourceDirectory: TASK2
-  dataResourceDirectory: aplause-mr-task-materials/TASK2
+  unityResourceDirectory: S2_SpotTheDifference
+  dataResourceDirectory: aplause-mr-task-materials/S2_SpotTheDifference
 --- !u!1001 &421367436
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1561,50 +1561,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1420796561209515633, guid: 63f6dec436454cd42866640cdbae54d0, type: 3}
   m_PrefabInstance: {fileID: 497380803}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &505202706
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 505202708}
-  - component: {fileID: 505202707}
-  m_Layer: 0
-  m_Name: MarkerResetBroadcaster
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &505202707
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 505202706}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9deddc12e6034b49b2d69ba5e5561b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &505202708
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 505202706}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &515544729
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6040,4 +5996,3 @@ SceneRoots:
   - {fileID: 611224558}
   - {fileID: 436799457}
   - {fileID: 1644233273}
-  - {fileID: 505202708}

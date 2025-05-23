@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class APMR_ExperimentInstructions : MonoBehaviour
+public class ICSMR_ExperimentInstructions : MonoBehaviour
 {
     public virtual void StartExperiment(int experimentIndex)
     {

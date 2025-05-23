@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class TASK1_SceneController : APMR_SceneController
+public class S1_SceneController : ICSMR_SceneController
 {
 
 
@@ -15,13 +15,17 @@ public class TASK1_SceneController : APMR_SceneController
     [SerializeField, Range(4, 5)]
     private int numberOfAssignableRooms = 4;
 
+
+    [SerializeField]
+    private string floorPlanMaterialPath = "S1_FloorPlanNegotiation/FloorPlanMaterials/";
+
     protected override void Start()
     {
         base.Start();
         floorPlanDisplayMeshRenderer = floorPlanDisplayGameObject.GetComponent<MeshRenderer>();
     }
 
-    public override void PrepareScene(int trialIndex, APMR_ExperimentRunner.Condition condition)
+    public override void PrepareScene(int trialIndex, ICSMR_ExperimentRunner.Condition condition)
     {
         base.PrepareScene(trialIndex, condition);
 
@@ -29,7 +33,7 @@ public class TASK1_SceneController : APMR_SceneController
         string showEnvironmentString = (showSurroundingEnvironments ? "_env" : "");
         string floorPlanToLoadString = (trialIndex + 1).ToString();
 
-        string floorPlanResourcePath = "TASK1/FloorPlanMaterials/" + numRoomsString + "Rooms/plan" + floorPlanToLoadString + "_" + numRoomsString + "room" + showEnvironmentString;
+        string floorPlanResourcePath = floorPlanMaterialPath + numRoomsString + "Rooms/plan" + floorPlanToLoadString + "_" + numRoomsString + "room" + showEnvironmentString;
 
         Material loadedFloorPlanMaterial = (Material)Resources.Load(floorPlanResourcePath, typeof(Material));
         if (loadedFloorPlanMaterial == null)

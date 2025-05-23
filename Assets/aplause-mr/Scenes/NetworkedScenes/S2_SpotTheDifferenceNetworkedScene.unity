@@ -3224,8 +3224,8 @@ MonoBehaviour:
   boxSetStackedRoot1: {fileID: 1607471224}
   boxSetTrainingRoot0: {fileID: 1147369927}
   boxSetTrainingRoot1: {fileID: 964848995}
-  unityResourceDirectory: TASK2
-  dataResourceDirectory: aplause-mr-task-materials/TASK2
+  unityResourceDirectory: S2_SpotTheDifference
+  dataResourceDirectory: aplause-mr-task-materials/S2_SpotTheDifference
 --- !u!4 &704989429
 Transform:
   m_ObjectHideFlags: 0

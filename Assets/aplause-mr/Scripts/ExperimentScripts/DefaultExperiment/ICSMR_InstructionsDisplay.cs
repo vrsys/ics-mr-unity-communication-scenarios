@@ -1,11 +1,9 @@
-using System.Collections;
 using System.Collections.Generic;
-using JetBrains.Annotations;
 using TMPro;
 using UnityEngine;
 
 
-public class APMR_InstructionsDisplay : MonoBehaviour
+public class ICSMR_InstructionsDisplay : MonoBehaviour
 {
     [SerializeField]
     private List<TextMeshProUGUI> TextBoxes;

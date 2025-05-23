@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class TASK2_SceneController : APMR_SceneController
+public class S2_SceneController : ICSMR_SceneController
 {
     public DifferenceObjectController differenceObjectController;
 
@@ -11,7 +11,7 @@ public class TASK2_SceneController : APMR_SceneController
     }
 
 
-    public override void PrepareScene(int trialIndex, APMR_ExperimentRunner.Condition condition)
+    public override void PrepareScene(int trialIndex, ICSMR_ExperimentRunner.Condition condition)
     {
         base.PrepareScene(trialIndex, condition);
 

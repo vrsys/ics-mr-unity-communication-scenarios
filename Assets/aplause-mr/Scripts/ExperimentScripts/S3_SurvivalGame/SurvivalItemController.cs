@@ -20,7 +20,7 @@ public class SurvivalItemController : NetworkBehaviour
     private GameObject survivalItemPrefab;
 
     [SerializeField]
-    private string unityResourceDirectory = "TASK3";
+    private string unityResourceDirectory = "S3_SurvivalGame";
 
     private int maxNumSurvivalItems = 15;
 

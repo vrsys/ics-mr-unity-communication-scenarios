@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static TASK3_SceneController;
 
-public class TASK3_SceneController : APMR_SceneController
+public class S3_SceneController : ICSMR_SceneController
 {
 
     [SerializeField]
@@ -16,10 +15,10 @@ public class TASK3_SceneController : APMR_SceneController
     private int numItemsToShow = 12;
 
     [SerializeField]
-    private APMR_InstructionsDisplay survivalDescriptionDisplay = null;
+    private ICSMR_InstructionsDisplay survivalDescriptionDisplay = null;
 
     [SerializeField]
-    private string taskDataResourceDirectory = "TASK3";
+    private string taskDataResourceDirectory = "S3_SurvivalGame";
 
     public enum SurvivalScenario
     {
@@ -42,7 +41,7 @@ public class TASK3_SceneController : APMR_SceneController
     }
 
 
-    public override void PrepareScene(int trialIndex, APMR_ExperimentRunner.Condition condition)
+    public override void PrepareScene(int trialIndex, ICSMR_ExperimentRunner.Condition condition)
     {
         base.PrepareScene(trialIndex, condition);
 
