@@ -178,6 +178,11 @@ public class SurvivalItemController : NetworkBehaviour
     private void PositionItems()
     {
 
+        foreach (GameObject obj in itemGameObjects)
+        {
+            obj.GetComponent<Rigidbody>().isKinematic = true;
+        }
+
         // in networked mode...
         if (NetworkManager.Singleton)
         {
@@ -269,6 +274,11 @@ public class SurvivalItemController : NetworkBehaviour
             itemGameObjects[i].transform.position = new Vector3(0,-1,0);
         }
 
+
+        foreach (GameObject obj in itemGameObjects)
+        {
+            obj.GetComponent<Rigidbody>().isKinematic = false;
+        }
     }
 
     public void HideItems()
