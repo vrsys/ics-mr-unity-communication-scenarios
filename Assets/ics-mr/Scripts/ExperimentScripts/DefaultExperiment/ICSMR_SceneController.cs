@@ -35,7 +35,7 @@ public class ICSMR_SceneController : MonoBehaviour
     {
 
         SetAvatarsVisible(false);
-        MuteAudioSources();
+        //MuteAudioSources();
 
     }
 
