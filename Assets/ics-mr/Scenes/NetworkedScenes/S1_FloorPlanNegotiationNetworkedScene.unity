@@ -3357,6 +3357,7 @@ MonoBehaviour:
   floorPlanDisplayGameObject: {fileID: 1290456233}
   showSurroundingEnvironments: 1
   numberOfAssignableRooms: 5
+  floorPlanMaterialPath: S1_FloorPlanNegotiation/FloorPlanMaterials/
 --- !u!1 &1463319473
 GameObject:
   m_ObjectHideFlags: 0
@@ -4072,7 +4073,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7821223164821688028, guid: 75671806bf0ab6d4cae41af386951d6a, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.1949999
+      value: 1.6
       objectReference: {fileID: 0}
     - target: {fileID: 7821223164821688028, guid: 75671806bf0ab6d4cae41af386951d6a, type: 3}
       propertyPath: m_LocalScale.y
@@ -5400,7 +5401,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3130830557821445414, guid: 0f874d7acb686f644b6043ba39bba74f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 17
+      value: 16.999939
       objectReference: {fileID: 0}
     - target: {fileID: 3130830557849588012, guid: 0f874d7acb686f644b6043ba39bba74f, type: 3}
       propertyPath: m_AnchorMax.x
