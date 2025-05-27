@@ -8,16 +8,16 @@ public class MaterialCreator : EditorWindow
 
     private List<string> textureFolders = new List<string>
     {
-        "Assets\\aplause-mr\\Resources\\aplause-mr-task-materials\\TASK1\\FloorPlanImages\\4Rooms",
-        "Assets\\aplause-mr\\Resources\\aplause-mr-task-materials\\TASK1\\FloorPlanImages\\5Rooms",
-        "Assets\\aplause-mr\\Resources\\aplause-mr-task-materials\\TASK3\\SurvivalItemImages"
+        "Assets\\ics-mr\\Resources\\ics-mr-communication-scenario-materials\\S1_FloorPlanNegotiation\\FloorPlanImages\\4Rooms",
+        "Assets\\ics-mr\\Resources\\ics-mr-communication-scenario-materials\\S1_FloorPlanNegotiation\\FloorPlanImages\\5Rooms",
+        "Assets\\ics-mr\\Resources\\ics-mr-communication-scenario-materials\\S3_SurvivalGame\\SurvivalItemImages"
     };
 
     private List<string> materialFolders = new List<string>
     {
-        "Assets\\aplause-mr\\Resources\\TASK1\\FloorPlanMaterials\\4Rooms",
-        "Assets\\aplause-mr\\Resources\\TASK1\\FloorPlanMaterials\\5Rooms",
-        "Assets\\aplause-mr\\Resources\\TASK3\\Materials\\SurvivalItemImageMaterials"
+        "Assets\\ics-mr\\Resources\\S1_FloorPlanNegotiation\\FloorPlanMaterials\\4Rooms",
+        "Assets\\ics-mr\\Resources\\S1_FloorPlanNegotiation\\FloorPlanMaterials\\5Rooms",
+        "Assets\\ics-mr\\Resources\\S3_SurvivalGame\\Materials\\SurvivalItemImageMaterials"
     };
 
     [MenuItem("Tools/Create Materials From Textures")]
