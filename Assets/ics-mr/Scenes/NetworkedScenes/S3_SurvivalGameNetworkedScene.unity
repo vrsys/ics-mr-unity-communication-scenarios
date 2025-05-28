@@ -4135,7 +4135,7 @@ MonoBehaviour:
   numItemsToShow: 12
   survivalDescriptionDisplay: {fileID: 1266437498}
   taskDataResourceDirectory: ics-mr-communication-scenario-materials/S3_SurvivalGame
-  survivalScenarioOrder: 0300000004000000020000000000000001000000
+  survivalScenarioOrder: 06000000050000000300000004000000020000000000000001000000
 --- !u!82 &1873105436
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5365,7 +5365,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3130830557821445414, guid: 0f874d7acb686f644b6043ba39bba74f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 16.999939
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 3130830557849588012, guid: 0f874d7acb686f644b6043ba39bba74f, type: 3}
       propertyPath: m_AnchorMax.x

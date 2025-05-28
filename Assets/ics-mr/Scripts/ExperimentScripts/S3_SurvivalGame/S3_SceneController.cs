@@ -26,7 +26,9 @@ public class S3_SceneController : ICSMR_SceneController
         SEA,
         WINTER,
         MOUNTAINS,
-        MOON
+        MOON,
+        CAVELABYRINTH,
+        SWAMP
     }
 
     [SerializeField]
