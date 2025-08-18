@@ -4,7 +4,7 @@ This repository contains Unity implementations of the communication tasks contai
 
 ## Installation
 
-The Unity implementations depend on the scenario materials that are contained in a [separate repository](https://github.com/vrsys/ics-mr-communication-scenario-materials).
+The Unity implementations depend on the scenario materials that are contained in a [separate repository](https://github.com/Telecommunication-Telemedia-Assessment/ics-mr-communication-scenario-materials).
 
 1. **Clone Repository.** The scenario materials are included as a git submodule, so this repository should be cloned as follows to simultaneously clone the scenario material repository:
 
