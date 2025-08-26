@@ -1,6 +1,6 @@
 # ICS-MR: Communication Scenario Implementations
 
-This repository contains Unity implementations of the communication tasks contained in the ICS-MR (Interactive Conversation Scenarios for Assessment of Mixed Reality Communication) dataset.    
+This repository contains Unity implementations of the communication tasks contained in the ICS-MR (Interactive Conversation Scenarios for Assessment of Mixed Reality Communication) dataset and [paper](https://doi.org/10.1145/3746027.3758247).
 
 ## Installation
 
@@ -62,6 +62,28 @@ Please note that in order to run the project using Unity Netcode, the Unity proj
 
 **Experiment Control:** After a scene has started running, the experiment can be started by pressing the Enter key. Subsequently, the experiment can be advanced using the Space key. Note that in networked mode, starting and advancing the experiment on one PC causes the experiment to start/advance for all participants. 
 
+## Acknowledgments
+If you use the dataset in your research, please include a link to the repository and reference the following paper: 
+
+```bibtex
+@article{immohr2025interactive,
+  title={ICS-MR: Interactive Conversation Scenarios for Assessment of
+ Mixed Reality Communication},
+  author={Immohr, Felix and Rendle, Gareth and Neidhardt, Annika and Lammert, Anton and Froehlich, Bernd and Raake, Alexander},
+  booktitle={Proceedings of the 33rd ACM International Conference on Multimedia},
+  year={2025},
+  pages={xx},
+  doi={10.1145/3746027.3758247},
+  url={https://doi.org/10.1145/3746027.3758247}
+}
+```
+**Authors:**
+* Gareth Rendle
+* Felix Immohr
+* Annika Neidhardt
+* Anton Lammert
+* Bernd Froehlich
+* Alexander Raake
 
 ## License
 
