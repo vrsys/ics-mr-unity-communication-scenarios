@@ -62,7 +62,7 @@ Please note that in order to run the project using Unity Netcode, the Unity proj
 
 **Experiment Control:** After a scene has started running, the experiment can be started by pressing the Enter key. Subsequently, the experiment can be advanced using the Space key. Note that in networked mode, starting and advancing the experiment on one PC causes the experiment to start/advance for all participants. 
 
-## Acknowledgments
+## Acknowledgments and Citation
 If you use the dataset in your research, please include a link to the repository and reference the following paper: 
 
 ```bibtex
