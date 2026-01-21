@@ -6,6 +6,10 @@ using System.Linq;
 using UnityEngine;
 using Unity.Netcode;
 using UnityEngine.InputSystem;
+using CsvHelper;
+using System.Globalization;
+using CsvHelper.Configuration.Attributes;
+using Unity.VisualScripting;
 
 public class ICSMR_ExperimentRunner : NetworkBehaviour
 {
@@ -63,10 +67,12 @@ public class ICSMR_ExperimentRunner : NetworkBehaviour
     // for counterbalancing, set condition order depending on group index
     public List<Condition> conditionOrder = new List<Condition> { Condition.FIRST_CONDITION, Condition.SECOND_CONDITION, Condition.THIRD_CONDITION, Condition.FOURTH_CONDITION };
 
-    public struct TrialData
+    public class TrialData
     {
-        public int trialNumber;
-        public float trialDuration;
+        //[Index(0)]
+        public int trialNumber { get; set; }
+        //[Index(1)]
+        public float trialDuration { get; set; }
     }
 
     [Header("Scene References")]
@@ -298,8 +304,22 @@ public class ICSMR_ExperimentRunner : NetworkBehaviour
             trialDuration = trialDuration
         };
         string writePath = studyDataFilePathBase + "_trial_data.csv";
-        Sinbad.CsvUtil.SaveObjects(new List<TrialData> { trialData }, writePath);
+
+        using (var writer = new StreamWriter(writePath, append: true))
+        using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
+        {
+            if (trialNum == 0)
+            {
+                csv.WriteHeader<TrialData>();
+                csv.NextRecord();
+            }
+            csv.WriteRecord(trialData);
+            csv.NextRecord();
+        }
+
         Debug.Log("Wrote trial data to " + writePath);
+
+
 
     }
 
